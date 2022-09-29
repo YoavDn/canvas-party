@@ -20,6 +20,9 @@ export function createSmartBg(el: HTMLElement, options: optionsType) {
     case 'fireworks':
       tamplates.fireworks(c!, canvas);
       break;
+      case 'starfield':
+      tamplates.starfield(c!, canvas);
+      break;
   }
 
   addEventListener('resize', () => {

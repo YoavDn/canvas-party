@@ -12,8 +12,6 @@ type pType ={
     draw: () =>void,
 }
 
-
-
 const numberOfParticules = 30;
 let isActive =  false
 const colors = ['#FF1461', '#18FF92', '#5A87FF', '#FBF38C'];
@@ -69,9 +67,6 @@ function animateParticules(x : number, y: number) {
   })
 }
 
-
-
-
 function setParticuleDirection(p: pType)  : {x: number, y: number}{
   var angle = anime.random(0, 360) * Math.PI / 180;
   var value = anime.random(50, 180);
@@ -99,9 +94,6 @@ function createParticule(x :number,y: number) {
   
   return p;
 }
-
-
-
 
 function renderParticule(anim : any) {
   for (let i = 0; i < anim.animatables.length; i++) {
