@@ -1,17 +1,17 @@
 const NUM_CONFETTI = 350;
 const COLORS = [
-  [255, 87, 159],
-  [187, 223, 197],
-  [186, 183, 0],
-  [96, 147, 93],
-  [248, 182, 70],
+  '#ff579fd9',
+  '#bbdfc5d9',
+  '#bab700d9',
+  '#60935dd9',
+  '#f8b646d9',
 ];
 const PI_2 = 2 * Math.PI;
 
 export function useConfetti(
   c: CanvasRenderingContext2D,
   canvas: HTMLCanvasElement,
-  colors: number[][] = COLORS,
+  colors: string[] = COLORS,
   confettiCount: number = NUM_CONFETTI,
 ) {
   const cofetties: Confeti[] = [];
@@ -52,14 +52,15 @@ class Confeti {
   ymax: number;
   vx: number;
   vy: number;
-  style: number[];
+  style: string;
   rgb: string;
   r: number;
   r2: number;
 
-  constructor(canvas: HTMLCanvasElement, c: CanvasRenderingContext2D, colors: number[][]) {
-    this.style = colors[Math.round(range(0, COLORS.length - 1))];
-    this.rgb = `rgba(${this.style[0]},${this.style[1]},${this.style[2]}`;
+  constructor(canvas: HTMLCanvasElement, c: CanvasRenderingContext2D, colors: string[]) {
+
+    this.style = colors[Math.round(range(0, colors.length - 1))];
+    this.rgb = hexToRGB(this.style);
     this.r = Math.round(range(1, 4));
     this.r2 = this.r * 2;
     this.c = c;
@@ -100,3 +101,16 @@ class Confeti {
     drawCircle(Math.round(this.x), Math.round(this.y), this.r, `${this.rgb},${this.opacity})`, this.c);
   }
 }
+
+
+function hexToRGB(hex: string) {
+    var r = parseInt(hex.slice(1, 3), 16),
+        g = parseInt(hex.slice(3, 5), 16),
+        b = parseInt(hex.slice(5, 7), 16);
+
+      // rgba(${this.style[0]},${this.style[1]},${this.style[2]}`
+        return `rgba(${r},${g},${b}`;
+    
+}
+
+
