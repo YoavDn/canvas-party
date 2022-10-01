@@ -122,7 +122,6 @@ export function useTrippy(c: CanvasRenderingContext2D, canvas: HTMLCanvasElement
   // offsets for moving height maps
   let dx1 = 0;
   let dy1 = 0;
-
   let dx2 = 0;
   let dy2 = 0;
 
@@ -155,9 +154,9 @@ export function useTrippy(c: CanvasRenderingContext2D, canvas: HTMLCanvasElement
     // random palette to interpolate towards?
 
     const direction = -Math.sin(x) >= 0 ? 1 : -1;
-    if (prevDirection != direction) {
+    if (prevDirection !== direction) {
       prevDirection = direction;
-      if (direction == -1) {
+      if (direction === -1) {
         palettes[0] = makeRandomPalette();
       } else {
         palettes[1] = makeRandomPalette();

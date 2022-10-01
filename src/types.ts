@@ -1,5 +1,5 @@
 export type optionsType = {
-  type: 'confetti' | 'trippy' | 'fireworks'| 'starfield';
+  type: 'confetti' | 'trippy' | 'fireworks' | 'starfield';
   count?: number;
   colors?: string[];
 };

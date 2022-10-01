@@ -7,5 +7,5 @@ export const tamplates = {
   confetti: useConfetti,
   trippy: useTrippy,
   fireworks: useFireworks,
-  starfield: useStarfield
+  starfield: useStarfield,
 };
