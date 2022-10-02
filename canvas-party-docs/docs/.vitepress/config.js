@@ -5,8 +5,14 @@ export default {
     themeConfig: {
       logo: '../public/canvas-party.svg',
     nav: [
-      { text: 'Guide', link: '/guide/what-is-canvas-party' },
-      { text: 'Tamplates', link: '/configs' },
+      { text: 'Guide',
+      items: [
+          { text: 'Intallation', link: '/guide/getting-started' },
+          { text: 'Using Vue', link: '/guide/using-vue' },
+          { text: 'Using React', link: '/guide/using-react' }
+        ]
+     },
+      { text: 'Tamplates',link: '/tamplates/index' },
     ],
     socialLinks: [
       { icon: 'github', link: 'https://github.com/YoavDn/canvas-party' },
@@ -26,9 +32,28 @@ export default {
           { text: 'Getting Started', link: '/guide/getting-started' },
         
         ],
+      },
+      {
+        text: 'Cofinguration',
+        items: [
+          { text: 'Using React', link: '/guide/using-react' },
+          { text: 'Using Vue', link: '/guide/using-vue' },
+        
+        ],
+      },
+        {
+        text: 'Tamplates',
+        items: [
+          { text: 'Confetti', link: '/tamplates/what-is-canvas-party' },
+          { text: 'Trippy', link: '/tamplates/getting-started' },
+          { text: 'Fireworks', link: '/tamplates/getting-started' },
+          { text: 'Starfield', link: '/tamplates/getting-started' },
+        
+        ],
       }
     ]
   },
   
 
 }
+

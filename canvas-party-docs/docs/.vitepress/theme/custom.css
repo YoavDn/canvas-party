@@ -16,6 +16,11 @@
     --vp-c-black-soft: black;
     --vp-c-black-mute: #2f2f2f;
 
+    /* --vp-c-black: #1a1a1a;
+        --vp-c-black-pure: #000000;
+        --vp-c-black-soft: black;
+        --vp-c-black-mute: black; */
+
     --vp-c-gray: #8e8e8e;
     --vp-c-gray-light-1: #aeaeae;
     --vp-c-gray-light-2: #c7c7c7;
@@ -89,6 +94,7 @@
     --vp-c-bg-soft: var(--vp-c-white-soft);
     --vp-c-bg-mute: var(--vp-c-white-mute);
     --vp-c-bg-alt: var(--vp-c-white-soft);
+    --vp-c-hero-bg: var(--vp-c-white);
 
     --vp-c-divider: var(--vp-c-divider-light-1);
     --vp-c-divider-light: var(--vp-c-divider-light-2);
@@ -119,16 +125,15 @@
 }
 
 .dark {
+    /* --vp-c-bg: var(--vp-c-black); */
     --vp-c-bg: var(--vp-c-black);
-    --vp-c-bg-soft: var(--vp-c-black-soft);
-    --vp-c-bg-mute: var(--vp-c-black-mute);
+    --vp-c-bg-soft: var(--vp-c-black-black);
+    --vp-c-bg-mute: var(--vp-c-black-pure);
     --vp-c-bg-alt: var(--vp-c-black-pure);
+    --vp-c-hero-bg: var(--vp-c-black-pure);
 
-    --vp-c-divider: white;
-    /* --vp-c-divider: var(--vp-c-divider-dark-1); */
-    
+    --vp-c-divider: var(--vp-c-divider-dark-1);
     --vp-c-divider-light: var(--vp-c-divider-dark-2);
-    
 
     --vp-c-divider-inverse: var(--vp-c-divider-light-1);
     --vp-c-divider-inverse-light: var(--vp-c-divider-light-2);
@@ -176,8 +181,8 @@
  * -------------------------------------------------------------------------- */
 
 :root {
-    --vp-z-index-local-nav: 10;
-    --vp-z-index-nav: 20;
+    --vp-z-index-local-nav: 40;
+    --vp-z-index-nav: 300;
     --vp-z-index-backdrop: 30;
     --vp-z-index-sidebar: 40;
     --vp-z-index-footer: 50;
@@ -368,15 +373,36 @@
     --vp-home-hero-image-filter: none;
 }
 
+.VPNav.no-sidebar {
+    background-color: var(--vp-c-hero-bg) !important;
+    border-bottom: solid 1px var(--vp-c-divider-dark-2);
+}
+.sidebar {
+    background-color: red !important;
+    border: solid 1px var(--vp-c-divider-dark-2);
+}
 
-/* .VPHome {
+.VPNav {
+    border-bottom: solid 1px var(--vp-c-divider-dark-2) !important;
     
-} */
+}
+.VPNav .content {
+    background: var(--vp-c-hero-bg) !important;
+    border-bottom: solid 1px var(--vp-c-divider-dark-2) !important;
+}
 
-/* .bg-wraper {
+.VPSidebar {
+    border-right: solid 1px var(--vp-c-divider-dark-2) !important;
+}
 
-    height: 100vh;
-} */
+
+
+
+/* home page */
+
+.bg-wraper {
+    background-color: var(--vp-c-hero-bg);
+}
 
 .hero {
     padding-top: 11rem;
