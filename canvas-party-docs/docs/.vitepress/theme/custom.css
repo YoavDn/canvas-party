@@ -379,22 +379,31 @@
 } */
 
 .hero {
-    padding-top: 13rem;
+    padding-top: 11rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 3rem;
+    gap: 1rem;
     z-index: 30;
 }
 
 .hero .title {
-    font-size: 4rem;
+    font-size: 4.5rem;
     font-weight: 900;
     z-index: 30;
+
+    line-height: 5.5rem;
+    color: transparent;
+    background: -webkit-linear-gradient(120deg, var(--vp-c-yellow),var(--vp-c-red),var(--vp-c-green),
+        rgb(46, 46, 255));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
 }
 
 .hero .sub-title {
+    margin-bottom: 1rem;
     font-size: 4rem;
+    font-weight: 500;
     z-index: 30;
 }
 
@@ -402,6 +411,7 @@
     font-size: 1.5rem;
     color: var(--vp-c-text-2);
     z-index: 30;
+    margin-bottom: 2rem;
 }
 
 .hero .actions-btns {
@@ -424,11 +434,17 @@
     cursor: pointer;
     padding: .6em 1em;
     border-radius: .5em;
-    background-color: var(--vp-button-brand-bg);
+    color: white;
+    /* box-shadow: 0px 0px 30px var(--vp-c-text-1); */
+    
+    background: -webkit-linear-gradient(120deg, var(--vp-c-yellow), var(--vp-c-red), var(--vp-c-green),
+                rgb(46, 46, 255));
+                transition: box-shadow .2s ease;
 }
 
  .get-started:hover {
     background-color: var(--vp-button-brand-hover-bg);
+    box-shadow: 4px 4px 70px var(--vp-c-text-1);
 }
 
 .view-tamplates:hover {
