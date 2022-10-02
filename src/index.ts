@@ -1,7 +1,7 @@
 import { tamplates } from './tamplates/index';
 import { optionsType } from './types';
 
-export function createSmartBg(el: HTMLElement, options: optionsType) {
+export function createCanvasParty(el: HTMLElement, options: optionsType) {
   const canvas = document.createElement('canvas');
   const c = canvas.getContext('2d');
   canvas.style.width = '100%';
