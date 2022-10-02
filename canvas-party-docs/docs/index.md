@@ -54,9 +54,6 @@ onMounted(() => {
   }
 })
   
-  
-
-  // const { page } = useData()
 </script>
 
 
@@ -64,8 +61,13 @@ onMounted(() => {
   </div>
   <div class=hero>
   <h2 class="title">Canvas Party</h2>
-  <h3>Background Animations library</h3>
+  <h3 class="sub-title">Background Animations library</h3>
   <p class="details">Create beatufiull canvas background with ease</p>
+
+<div class="actions-btns">
+<a class="get-started" href="/guide/getting-started">Get Started</a>
+<a class="view-tamplates" href="/tamplates/tamplates">View tamplates</a>
+</div>
   </div>
 
   
@@ -77,7 +79,11 @@ onMounted(() => {
 <style> 
 .bg-wraper {
   position: absolute;
+  z-index: 10;
   height: 90vh;
   width: 100%;
 }
+
+
+
 </style>

@@ -3,6 +3,7 @@ export default {
   description: 'justplaying arount.',
 
     themeConfig: {
+      logo: '../public/canvas-party.svg',
     nav: [
       { text: 'Guide', link: '/guide/what-is-canvas-party' },
       { text: 'Tamplates', link: '/configs' },

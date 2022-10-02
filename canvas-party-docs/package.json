@@ -10,6 +10,7 @@
     "docs:serve": "vitepress serve docs"
   },
   "devDependencies": {
+    "sass": "^1.55.0",
     "vitepress": "^1.0.0-alpha.18",
     "vue": "^3.2.40"
   },
