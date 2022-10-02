@@ -1,12 +1,16 @@
 ---
 layout: home
+---
+
+<!-- ---
+layout: home
 
 hero:
   name: Canvas Party
   text: Background Animations library.
-  tagline:
+  tagline: create beatufiull canvas background with ease
   image:
-    src: /logo.png
+    src: /public/canvas-party.svg
     alt: Canvas Party png
   actions:
     - theme: brand
@@ -25,28 +29,55 @@ features:
   - icon: 😌
     title: Simple and minimal, always
     details: Lorem ipsum...
----
+--- -->
 
 
 <script setup>
   import { useData } from 'vitepress'
-  import {createCanvasParty} from 'canvas-party'
-  const homeEl = document.querySelector('.VPHome')
-    console.log(homeEl);
+  import {ref, onMounted} from 'vue'
+  import { createCanvasParty } from 'canvas-party'
+  
+    // console.log(homeEl);
   // const canvas  = createCanvasParty(homeEl,{type: "confetti"})    
-  // homeEl.appendChild(canvas)
+  const wraper = ref(null)
+  console.log(wraper.value)
+  const canvas = ref(null)
+onMounted(() => {
+  console.log('hi');
+  if(wraper.value ) {
+    canvas.value= createCanvasParty(wraper.value , {type: 'confetti'})
+    console.log(canvas.value);
+    const wraperEl  = document.querySelector('.bg-wraper')
+    
+    wraperEl.appendChild(canvas.value)
 
-  const { page } = useData()
+  }
+})
+  
+  
+
+  // const { page } = useData()
 </script>
 
-<template>
-  <h2 class="hello">hii</h2>
-</template>
 
-<style>
-  .hello {
-    color: red;
-  }
+  <div ref="wraper" class="bg-wraper">
+  </div>
+  <div class=hero>
+  <h2 class="title">Canvas Party</h2>
+  <h3>Background Animations library</h3>
+  <p class="details">Create beatufiull canvas background with ease</p>
+  </div>
 
-  </style>
+  
+  
 
+
+
+
+<style> 
+.bg-wraper {
+  position: absolute;
+  height: 90vh;
+  width: 100%;
+}
+</style>

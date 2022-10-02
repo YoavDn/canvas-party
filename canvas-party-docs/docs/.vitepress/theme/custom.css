@@ -109,7 +109,7 @@
     --vp-c-text-code: var(--vp-c-indigo-soft);
 
     --vp-c-brand: var(--vp-c-red);
-    --vp-c-gradient: var(--vp-c-gradient)
+    --vp-c-gradient: var(--vp-c-gradient);
     --vp-c-brand-light: var(--vp-c-red-light);
     --vp-c-brand-lighter: var(--vp-c-red-lighter);
     --vp-c-brand-dark: var(--vp-c-red-dark);
@@ -120,14 +120,13 @@
 
 .dark {
     --vp-c-bg: var(--vp-c-black);
-    --vp-c-bg-soft: var(--vp-c-black);
-    --vp-c-bg-mute: var(--vp-c-black);
+    --vp-c-bg-soft: var(--vp-c-black-soft);
+    --vp-c-bg-mute: var(--vp-c-black-mute);
     --vp-c-bg-alt: var(--vp-c-black-pure);
 
-    /* --vp-c-divider: var(--vp-c-divider-dark-1); */
-    --vp-c-divider: white;
-    --vp-c-divider-light: light;
-    /* --vp-c-divider-light: var(--vp-c-divider-dark-2); */
+    --vp-c-divider: var(--vp-c-divider-dark-1);
+    
+    --vp-c-divider-light: var(--vp-c-divider-dark-2);
 
     --vp-c-divider-inverse: var(--vp-c-divider-light-1);
     --vp-c-divider-inverse-light: var(--vp-c-divider-light-2);
@@ -360,7 +359,7 @@
 
 :root {
     --vp-home-hero-name-color:transparent;
-    --vp-home-hero-name-background: linear-gradient(120deg, red, orange, yellow, green, #2541B2, indigo, violet, red);;
+    --vp-home-hero-name-background: linear-gradient(120deg,var(--vp-c-brand-lighter), var(--vp-c-brand-dark));
     
 
     --vp-home-hero-image-background-image: none;
@@ -370,4 +369,9 @@
 
 /* .VPHome {
     
+} */
+
+/* .bg-wraper {
+
+    height: 100vh;
 } */
