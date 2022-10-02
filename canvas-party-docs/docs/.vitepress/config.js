@@ -9,7 +9,7 @@ export default {
       { text: 'Tamplates', link: '/configs' },
     ],
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' },
+      { icon: 'github', link: 'https://github.com/YoavDn/canvas-party' },
       // You can also add custom icons by passing SVG as string:
       {
         icon: {

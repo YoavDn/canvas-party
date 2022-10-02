@@ -1,16 +1,57 @@
 # Getting started 
 
-A map in YAML needs to be resolved before it can be closed, and a new map is created. A new map can be created by either increasing the indentation level or by resolving the previous map and starting an adjacent map. 
+::: warning
+cavnasParty is currently in alpha status. It is already suitable for out-of-the-box documentation use, but the config and theming API may still change between minor releases.
+:::
 
-A list includes values listed in a specific order and may contain any number of items needed. A list sequence starts with a dash (-) and a space, while indentation separates it from the parent. You can think of a sequence as a Python list or an array in Bash or Perl. A list can be embedded into a map. 
+## Installstion
 
-YAML also contains scalars, which are arbitrary data (encoded in Unicode) that can be used as values such as strings, integers, dates, numbers, or booleans.
+with npm:
 
-When creating a YAML file, you’ll need to ensure that you follow these syntax rules and that your file is valid. A linter is an application that verifies the syntax of a file. The yamllint command can help to ensure you’ve created a valid YAML file before you hand it over to an application.
+```Bash
+$ npm install canvas-party
+```
+with yarn:
+```Bash
+$ yarn add canvas-party
+```
+
+## Basic usage
+
+to create your first canvas first create a wraper on witch the canvas element sits in.
+then use the `createCanvasParty` function  with the "type" of the disired [tamplate](/tameplates), this will return a custom canvas.
+The finel step is to append the canvas elemnt to the wraper.
 
 
-YAML uses Python-style indentation to indicate nesting. Tab characters are not allowed, so whitespaces are used instead. There are no usual format symbols, such as braces, square brackets, closing tags, or quotation marks. YAML files use a .yml or .yaml extension. 
+```js 
+import { createCanvasParty } from 'canvas-party'
 
-The structure of a YAML file is a map or a list.
+const canvasWraper = document.qeurySelector('.canvas-wraper')
+const myCanvasParty = createCanvasParty(canvasWraper, {type: 'confetti'})
 
-Maps allow you to associate key-value pairs. Each key must be unique, and the order doesn't matter. Think of a Python dictionary or a variable assignment in a Bash script.
+canvasWraper.appendChild(canvasParty)
+
+```
+
+
+## Tamplate customistion:
+ 
+Currently **only** the `confetti` and `fireworks` tamplates have customiztion options, putting a options attribute on other 
+templates **will not work**
+
+```ts 
+interface canvasOptions {
+    type: tamplateName
+    colors?: string[],
+    count?: number
+}
+```
+Example of custom firework canvas:
+```js 
+const myCusomCanvas = createCanvasParty(canvasWraper, {
+    type: fireworks,
+    colors: ['#FFFFF','#FF1F1f','#FF1F1f'],
+    count: 450
+     })
+```
+ 

@@ -80,7 +80,7 @@ onMounted(() => {
 .bg-wraper {
   position: absolute;
   z-index: 10;
-  height: 90vh;
+  height: 91vh;
   width: 100%;
 }
 
