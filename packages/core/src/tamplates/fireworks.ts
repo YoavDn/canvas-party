@@ -16,6 +16,8 @@ const PARTICULES_NUM = 30;
 let isActive = false;
 const COLORS = ['#FF1461', '#18FF92', '#5A87FF', '#FBF38C'];
 
+
+
 export function useFireworks(
   c: CanvasRenderingContext2D,
   canvas: HTMLCanvasElement,
@@ -26,6 +28,11 @@ export function useFireworks(
   let pointerY = 0;
 
   autoClick();
+
+  addEventListener('resize', () => {
+    canvas.width = document.body.clientWidth
+    canvas.height = document.body.clientHeight
+  })
 
   canvas.addEventListener('click', (e) => {
     pointerX = e.clientX;

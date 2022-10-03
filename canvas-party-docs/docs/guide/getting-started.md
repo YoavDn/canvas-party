@@ -29,7 +29,7 @@ import { createCanvasParty } from 'canvas-party'
 const canvasWraper = document.qeurySelector('.canvas-wraper')
 const myCanvasParty = createCanvasParty(canvasWraper, {type: 'confetti'})
 
-canvasWraper.appendChild(canvasParty)
+canvasWraper.appendChild(myCanvasParty)
 
 ```
 
@@ -49,7 +49,7 @@ interface canvasOptions {
 Example of custom firework canvas:
 ```js 
 const myCusomCanvas = createCanvasParty(canvasWraper, {
-    type: fireworks,
+    type: 'fireworks',
     colors: ['#FFFFF','#FF1F1f','#FF1F1f'],
     count: 450
      })

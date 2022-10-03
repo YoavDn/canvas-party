@@ -8,10 +8,14 @@ export function useConfetti(
   colors: string[] = COLORS,
   confettiCount: number = NUM_CONFETTI,
 ) {
+  let h :number
+  let w :number
+
   const cofetties: Confeti[] = [];
   for (let i = 0; i < confettiCount; i++) {
     cofetties.push(new Confeti(canvas, c, colors));
   }
+
 
   function step() {
     requestAnimationFrame(step);

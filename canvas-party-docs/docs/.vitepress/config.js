@@ -1,5 +1,5 @@
 export default {
-  title: 'Canvas Party',
+  title: 'CanvasParty',
   description: 'justplaying arount.',
 
     themeConfig: {

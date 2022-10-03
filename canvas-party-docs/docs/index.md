@@ -46,6 +46,7 @@ onMounted(() => {
   console.log('hi');
   if(wraper.value ) {
     canvas.value= createCanvasParty(wraper.value , {type: 'confetti', count: 600})
+
     console.log(canvas.value);
     const wraperEl  = document.querySelector('.bg-wraper')
     
@@ -62,7 +63,7 @@ onMounted(() => {
   <div class=hero>
   <h2 class="title">Canvas Party</h2>
   <h3 class="sub-title">Background Animations library</h3>
-  <p class="details">Create beatufiull canvas background with ease</p>
+  <p class="details">Add beautiful backgrounds to your site with ease</p>
 
 <div class="actions-btns">
 <a class="get-started" href="/guide/getting-started">Get Started</a>
