@@ -43,9 +43,9 @@ features:
   console.log(wraper.value)
   const canvas = ref(null)
 onMounted(() => {
-  console.log('hi');
+  
   if(wraper.value ) {
-    canvas.value= createCanvasParty(wraper.value , {type: 'confetti', count: 600})
+    canvas.value= createCanvasParty(wraper.value , {type: 'confetti', count: 50})
 
     console.log(canvas.value);
     const wraperEl  = document.querySelector('.bg-wraper')
