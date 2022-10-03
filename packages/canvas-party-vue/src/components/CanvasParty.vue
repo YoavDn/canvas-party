@@ -5,9 +5,11 @@
 </template>
 
 
-<script  setup lang='ts'>
-import { defineProps, ref, onMounted } from 'vue'
-import { createCanvasParty } from '../../core/lib';
+<script setup  lang='ts'>
+import { defineProps, ref, onMounted, defineComponent } from 'vue'
+import { createCanvasParty } from '../../../core/lib'
+
+
 const props = defineProps<{
     type: 'confetti' | 'fireworks' | 'starfield' | 'trippy',
     options?: { colors?: string[], count?: number }
@@ -21,7 +23,6 @@ onMounted(() => {
     canvasParty.value = createCanvasParty(wraper!, { type: props.type, ...props.options })
     wraper!.appendChild(canvasParty.value)
 })
-
 
 </script>
 

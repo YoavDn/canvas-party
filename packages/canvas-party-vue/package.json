@@ -1,15 +1,29 @@
 {
-  "name": "canvas-party-vue",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "name": "@canvas-party/vue",
+  "version": "0.0.1",
+  "main": "./dist/umd.js",
+  "module": "./dist/es.js",
+  "exports": {
+    ".": {
+      "import" : "./dist/es.js",
+      "require": "./dist/umd.js"
+    }
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.2.37"
+  },
   "devDependencies": {
-    "vue": "^3.2.40"
+    "@vitejs/plugin-vue": "^3.1.0",
+    "typescript": "^4.6.4",
+    "vite": "^3.1.0",
+    "vue-tsc": "^0.40.4"
   }
 }
