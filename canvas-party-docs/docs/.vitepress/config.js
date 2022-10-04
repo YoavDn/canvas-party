@@ -34,7 +34,7 @@ export default {
         ],
       },
       {
-        text: 'Cofinguration',
+        text: 'Frameworks',
         items: [
           { text: 'Using React', link: '/guide/using-react' },
           { text: 'Using Vue', link: '/guide/using-vue' },

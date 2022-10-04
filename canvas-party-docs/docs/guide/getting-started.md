@@ -5,13 +5,14 @@ cavnasParty is currently in alpha status. It is already suitable for out-of-the-
 :::
 
 ## Installstion
+if you want to use **CanvasParty** with a JavaScript framework see the [frameworks](/guide/using-react) section
 
-with npm:
+With npm:
 
 ```Bash
 $ npm install canvas-party
 ```
-with yarn:
+With yarn:
 ```Bash
 $ yarn add canvas-party
 ```

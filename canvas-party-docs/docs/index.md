@@ -35,23 +35,16 @@ features:
 <script setup>
   import { useData } from 'vitepress'
   import {ref, onMounted} from 'vue'
-  import { createCanvasParty } from 'canvas-party'
-  
-    // console.log(homeEl);
-  // const canvas  = createCanvasParty(homeEl,{type: "confetti"})    
+  import { createCanvasParty } from '../../packages/core/lib'
+
   const wraper = ref(null)
-  console.log(wraper.value)
   const canvas = ref(null)
+
 onMounted(() => {
-  
   if(wraper.value ) {
     canvas.value= createCanvasParty(wraper.value , {type: 'confetti', count: 500})
-
-    console.log(canvas.value);
-    const wraperEl  = document.querySelector('.bg-wraper')
-    
+    const wraperEl  = document.querySelector('.bg-wraper')    
     wraperEl.appendChild(canvas.value)
-
   }
 })
   
@@ -71,11 +64,6 @@ onMounted(() => {
 </div>
   </div>
 
-  
-  
-
-
-
 
 <style> 
 .bg-wraper {
@@ -84,7 +72,4 @@ onMounted(() => {
   height: 91vh;
   width: 100%;
 }
-
-
-
 </style>
