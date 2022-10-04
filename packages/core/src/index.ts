@@ -1,7 +1,7 @@
 import { tamplates } from './tamplates/index';
-import { optionsType } from './types';
+import { IOptionsType } from './types';
 
-export function createCanvasParty(el: HTMLElement, options: optionsType) {
+export function createCanvasParty(el: HTMLElement, options: IOptionsType) {
   const canvas = document.createElement('canvas');
   const c = canvas.getContext('2d');
   canvas.style.width = '100%';
@@ -26,6 +26,12 @@ export function createCanvasParty(el: HTMLElement, options: optionsType) {
       break;
       case 'starfield':
       tamplates.starfield(c!, canvas);
+      break;
+       case 'tvSnow':
+      tamplates.tvSnow(c!, canvas);
+      break;
+      case 'underground':
+      tamplates.underground(c!, canvas);
       break;
   }
   
