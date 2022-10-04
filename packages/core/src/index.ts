@@ -28,21 +28,6 @@ export function createCanvasParty(el: HTMLElement, options: optionsType) {
       tamplates.starfield(c!, canvas);
       break;
   }
-
-  // addEventListener('resize', () => {
-  //   elRect = el.getBoundingClientRect();
-  //   canvas.height = elRect.height;
-  //   canvas.width = elRect.width;
-
-  //   // switch (options.type) {
-  //   //   case 'confetti':
-  //   //     tamplates.confetti(c!, canvas, options.colors, options.count);
-  //   //     break;
-  //   //   case 'trippy':
-  //   //     tamplates.trippy(c!, canvas);
-  //   //     break;
-  //   // }
-  // });
-
+  
   return canvas;
 }
