@@ -1,17 +1,21 @@
 {
   "name": "@canvas-party/vue",
   "version": "0.0.1",
-  "main": "./dist/umd.js",
-  "module": "./dist/es.js",
+  "main": "./dist/canvas-party-vue.umd.js",
+  "module": "./dist/canvas-party-vue.es.js",
   "exports": {
     ".": {
-      "import" : "./dist/es.js",
-      "require": "./dist/umd.js"
+      "import": "./dist/canvas-party-vue.es.js",
+      "require": "./dist/canvas-party-vue.umd.js"
     }
   },
   "files": [
     "dist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YoavDn/canvas-animations.git"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
@@ -24,6 +28,14 @@
     "@vitejs/plugin-vue": "^3.1.0",
     "typescript": "^4.6.4",
     "vite": "^3.1.0",
+    "vite-plugin-dts": "^1.6.4",
     "vue-tsc": "^0.40.4"
-  }
+  },
+  "description": "background animations library",
+  "bugs": {
+    "url": "https://github.com/YoavDn/canvas-animations/issues"
+  },
+  "homepage": "https://github.com/YoavDn/canvas-animations#readme",
+  "author": "Yoav Mendelson",
+  "license": "ISC"
 }

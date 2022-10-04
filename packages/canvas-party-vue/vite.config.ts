@@ -8,9 +8,9 @@ import path from 'path'
 export default defineConfig({
   build: {
     lib: {
-      entry: path.resolve(__dirname, "src/index.js"),
-      name: "canvas-party",
-      fileName: (format) => `${format}.js`
+      entry: path.resolve(__dirname, "src/index.ts"),
+      name: "canvas-party-vue",
+      fileName: (format) => `canvas-party-vue.${format}.js`
     },
     rollupOptions : {
       external: ["vue"],

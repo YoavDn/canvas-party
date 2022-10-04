@@ -5,4 +5,4 @@ export default {
     install: ( app, options) => {
         app.component("CanvasParty", CanvasParty )
     }
-} 
+}  as Plugin
