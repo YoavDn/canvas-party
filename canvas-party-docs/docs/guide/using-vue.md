@@ -41,4 +41,4 @@ const canvasOptions = reactive({
 </template>
 ```
 
-**And that it!**
+**And that's it!**
