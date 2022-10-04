@@ -1,7 +1,6 @@
 
 <template>
     <div class="canvas-wraper" id="canvas-wraper">
-
     </div>
 </template>
 

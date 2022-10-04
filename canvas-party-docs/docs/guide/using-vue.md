@@ -30,7 +30,7 @@ Adding your first canvas in Vue
 import {ref, reacitve} from 'vue'
 
 const canvasType = ref('confetti')
-const canvasOptions = reacitve({
+const canvasOptions = reactive({
     colors: ['#399E5A','#5ABCB9','#63E2C6'],
     count: 350
 })
