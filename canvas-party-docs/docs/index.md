@@ -20,7 +20,7 @@ hero:
       text: View on GitHub
       link: https://github.com/vuejs/vitepress
 features:
-  - icon: 🖼 
+  - icon: 🖼
     title: Tamplates
     details: Vite, The DX that can't be beat
   - icon: 🧙
@@ -30,7 +30,6 @@ features:
     title: Simple and minimal, always
     details: Lorem ipsum...
 --- -->
-
 
 <script setup>
   import { useData } from 'vitepress'
@@ -42,14 +41,13 @@ features:
 
 onMounted(() => {
   if(wraper.value ) {
-    canvas.value= createCanvasParty(wraper.value , {type: 'confetti', count: 500})
+    canvas.value= createCanvasParty(wraper.value , {type: 'confetti'})
     const wraperEl  = document.querySelector('.bg-wraper')    
     wraperEl.appendChild(canvas.value)
   }
 })
   
 </script>
-
 
   <div ref="wraper" class="bg-wraper">
   </div>
@@ -63,7 +61,6 @@ onMounted(() => {
 <a class="view-tamplates" href="/tamplates/tamplates">View tamplates</a>
 </div>
   </div>
-
 
 <style> 
 .bg-wraper {
