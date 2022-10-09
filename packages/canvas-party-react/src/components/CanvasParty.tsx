@@ -1,36 +1,35 @@
-import { useState , useEffect, useRef} from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { createCanvasParty } from '../../../core/lib'
-type canvasPartyType  = 'confetti' | 'fireworks' | 'starfield' | 'trippy'
+import { TTamplates } from '../../../core/src/types'
 
-interface  ICanvasPartyProps  {
-    type: canvasPartyType,
-     options?: {
-        colors?: string[],
-         count?: number }
-        }
+interface ICanvasPartyProps {
+  options?: {
+    colors?: string[]
+    count?: number
+  }
+}
 
 type TProps = {
-    canvasOptions: ICanvasPartyProps
+  options: ICanvasPartyProps
+  type: TTamplates
 }
 
+function CanvasParty({ options, type }: TProps) {
+  const canvasWrapperRef = useRef<any>()
 
-function CanvasParty( {canvasOptions } :TProps ) {
-    const canvasWrapperRef = useRef<any>()
-    
-    useEffect(() => {   
-        if(!canvasWrapperRef.current) return
-        const canvas = createCanvasParty(canvasWrapperRef.current, { type:  canvasOptions.type, ...canvasOptions.options})
-        if(canvasWrapperRef.current.hasChildNodes()) {
-            canvasWrapperRef.current.innerHTML = null
-        }
-        canvasWrapperRef.current.appendChild(canvas)
-        
+  useEffect(() => {
+    if (!canvasWrapperRef.current) return
+    const canvas = createCanvasParty(canvasWrapperRef.current, {
+      type,
+      ...options,
+    })
+    if (canvasWrapperRef.current.hasChildNodes()) {
+      canvasWrapperRef.current.innerHTML = null
+    }
+    canvasWrapperRef.current.appendChild(canvas)
+  }, [options, type])
 
-    },[canvasOptions])
-    
-    return ( 
-       <div ref={canvasWrapperRef} className='canvas-wraper'></div>
-    )
+  return <div ref={canvasWrapperRef} className="canvas-wraper"></div>
 }
 
-export default CanvasParty;
+export default CanvasParty
