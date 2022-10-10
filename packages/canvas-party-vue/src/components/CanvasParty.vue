@@ -29,6 +29,7 @@ watchEffect(() => {
   canvasParty.value = createCanvasParty(wraper, {
     type: props.type,
     ...props.options,
+    
   })
   wraper.appendChild(canvasParty.value)
 })
