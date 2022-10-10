@@ -2,27 +2,28 @@ export default {
   title: 'CanvasParty',
   description: 'justplaying arount.',
 
-    themeConfig: {
-      logo: '../public/canvas-party.svg',
+  themeConfig: {
+    logo: '../public/canvas-party.svg',
     nav: [
-      { text: 'Guide',
-      items: [
+      {
+        text: 'Guide',
+        items: [
           { text: 'Intallation', link: '/guide/getting-started' },
           { text: 'Using Vue', link: '/guide/using-vue' },
-          { text: 'Using React', link: '/guide/using-react' }
-        ]
-     },
-      { text: 'Tamplates',link: '/tamplates/index' },
+          { text: 'Using React', link: '/guide/using-react' },
+        ],
+      },
+      { text: 'Tamplates', link: '/tamplates/index' },
     ],
     socialLinks: [
       { icon: 'github', link: 'https://github.com/YoavDn/canvas-party' },
       // You can also add custom icons by passing SVG as string:
       {
         icon: {
-          svg: '<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Dribbble</title><path d="M12...6.38z"/></svg>'
+          svg: '<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Dribbble</title><path d="M12...6.38z"/></svg>',
         },
-        link: '...'
-      }
+        link: '...',
+      },
     ],
     sidebar: [
       {
@@ -30,7 +31,6 @@ export default {
         items: [
           { text: 'What is CanvasParty', link: '/guide/what-is-canvas-party' },
           { text: 'Getting Started', link: '/guide/getting-started' },
-        
         ],
       },
       {
@@ -38,22 +38,19 @@ export default {
         items: [
           { text: 'Using React', link: '/guide/using-react' },
           { text: 'Using Vue', link: '/guide/using-vue' },
-        
         ],
       },
-        {
+      {
         text: 'Tamplates',
         items: [
-          { text: 'Confetti', link: '/tamplates/what-is-canvas-party' },
-          { text: 'Trippy', link: '/tamplates/getting-started' },
-          { text: 'Fireworks', link: '/tamplates/getting-started' },
-          { text: 'Starfield', link: '/tamplates/getting-started' },
-        
+          { text: 'Confetti', link: '/tamplates/confetti' },
+          { text: 'Trippy', link: '/tamplates/trippy' },
+          { text: 'Fireworks', link: '/tamplates/fireworks' },
+          { text: 'Starfield', link: '/tamplates/starfield' },
+          { text: 'TV snow', link: '/tamplates/tvSnow' },
+          { text: 'Underground', link: '/tamplates/underground' },
         ],
-      }
-    ]
+      },
+    ],
   },
-  
-
 }
-

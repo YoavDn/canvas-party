@@ -12,28 +12,28 @@ export function createCanvasParty(el: HTMLElement, options: IOptionsType) {
   canvas.width = elRect.width;
 
   //tamplate chooser
-  const {colors, count} = options
+  const { colors, count } = options;
 
   switch (options.type) {
     case 'confetti':
       tamplates.confetti(c!, canvas, colors, count);
       break;
     case 'trippy':
-      tamplates.trippy(c!, canvas,);
+      tamplates.trippy(c!, canvas);
       break;
     case 'fireworks':
       tamplates.fireworks(c!, canvas, colors, count);
       break;
-      case 'starfield':
+    case 'starfield':
       tamplates.starfield(c!, canvas);
       break;
-       case 'tvSnow':
+    case 'tvSnow':
       tamplates.tvSnow(c!, canvas);
       break;
-      case 'underground':
+    case 'underground':
       tamplates.underground(c!, canvas);
       break;
   }
-  
+
   return canvas;
 }

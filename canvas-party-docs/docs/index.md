@@ -69,4 +69,6 @@ onMounted(() => {
   height: 91vh;
   width: 100%;
 }
+
+
 </style>

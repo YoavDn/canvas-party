@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { defineProps, ref, watchEffect, onMounted } from 'vue'
+import _ from 'lodash'
 import { createCanvasParty } from '../../../core/lib'
 import { TTamplates } from '../../../core/src/types'
 
@@ -8,10 +9,11 @@ const props = defineProps<{
   options?: { colors?: string[]; count?: number }
 }>()
 
+const uniqId = _.uniqueId('canvas_')
 const canvasParty = ref<HTMLCanvasElement | null>(null)
 
 onMounted(() => {
-  const wraper = document.getElementById('canvas-wraper') as HTMLDivElement
+  const wraper = document.getElementById(uniqId) as HTMLDivElement
   canvasParty.value = createCanvasParty(wraper, {
     type: props.type,
     ...props.options,
@@ -21,7 +23,7 @@ onMounted(() => {
 
 watchEffect(() => {
   console.log(props.options, props.type)
-  const wraper = document.getElementById('canvas-wraper') as HTMLDivElement
+  const wraper = document.getElementById(uniqId) as HTMLDivElement
   if (!wraper) return
   wraper.removeChild<HTMLCanvasElement>(canvasParty.value!)
   canvasParty.value = createCanvasParty(wraper, {
@@ -33,5 +35,5 @@ watchEffect(() => {
 </script>
 
 <template>
-  <div class="canvas-wraper" id="canvas-wraper"></div>
+  <div class="canvas-wraper" :id="uniqId"></div>
 </template>

@@ -1,6 +1,6 @@
 # CanvasParty with Vue
 
-to add canvasParty element to your Vue appliction first install the `@canvas-party/vue` package that serve as a wraper for the canvasElement
+to add canvasParty to your Vue appliction first install the `@canvas-party/vue` package that serve as a wraper for the canvas element
 and add is as plugin in the `main.js` file.
 
 To get started run this command in the terminal
@@ -42,5 +42,3 @@ const canvasOptions = reactive({
   </div>
 </template>
 ```
-
-**And that's it!**

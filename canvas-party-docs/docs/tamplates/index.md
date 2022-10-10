@@ -1,0 +1,42 @@
+---
+layout: home
+---
+
+<script setup>
+    import CanvasParty from '../../../packages/canvas-party-vue/src/components/CanvasParty.vue'
+ 
+    const tamplates = [
+        {
+        type:'trippy',
+        title: 'Trippy'
+        },
+        {type:'tvSnow',
+        title: 'TV Snow'
+         },
+          {
+            type: 'confetti',
+            title: 'Confetti'
+          },
+           {type:'underground',
+           title: 'Underground'
+           },
+           {type:'starfield',
+           title: 'Starfield'
+           },
+            {type:'fireworks',
+            title: 'Fireworks'
+           },
+           ]
+</script>
+
+ <div class="tamplates-container">
+    <div class="tamplate-card" v-for="tamplate in tamplates">
+        <CanvasParty class="canvas-card"  :type="tamplate.type"/>
+        <h2>{{tamplate.title}}</h2>
+     </div>
+ </div>
+
+<style> 
+
+
+</style>
