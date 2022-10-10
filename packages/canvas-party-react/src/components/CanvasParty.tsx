@@ -1,20 +1,19 @@
-import { useState, useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
+import React from 'react'
 import { createCanvasParty } from '../../../core/lib'
 import { TTamplates } from '../../../core/src/types'
 
 interface ICanvasPartyProps {
-  options?: {
-    colors?: string[]
-    count?: number
-  }
+  colors?: string[]
+  count?: number
 }
 
 type TProps = {
-  options: ICanvasPartyProps
+  options?: ICanvasPartyProps
   type: TTamplates
 }
 
-function CanvasParty({ options, type }: TProps) {
+const CanvasParty: React.FunctionComponent<TProps> = ({ options, type }) => {
   const canvasWrapperRef = useRef<any>()
 
   useEffect(() => {
@@ -26,6 +25,7 @@ function CanvasParty({ options, type }: TProps) {
     if (canvasWrapperRef.current.hasChildNodes()) {
       canvasWrapperRef.current.innerHTML = null
     }
+
     canvasWrapperRef.current.appendChild(canvas)
   }, [options, type])
 
