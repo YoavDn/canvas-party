@@ -26,6 +26,9 @@
 .canvas-card {
   cursor: pointer;
   height: 300px;
+  border-radius: 2rem;
+  outline: solid var(--vp-c-text-1) 1px;
+  transition: outline 0.3s ease;
 }
 
 .canvas-card canvas {
@@ -34,8 +37,7 @@
 
 @media (min-width: 600px) {
   .canvas-card:hover {
-    outline: solid white 1px;
-    border-radius: 2rem;
+    outline: solid 1px var(--vp-c-brand);
     cursor: pointer;
     height: 300px;
   }
