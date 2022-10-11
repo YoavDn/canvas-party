@@ -1,7 +1,6 @@
 # CanvasParty with React
 
-to add canvasParty element to your React appliction first install the `@canvas-party/react` package that serve as a wraper for the canvasElement
-and add is as plugin in the `main.js` file.
+to add canvasParty element to your React appliction first install the `@canvas-party/react` package.
 
 To get started run this command in the terminal at your project root
 
@@ -9,7 +8,7 @@ To get started run this command in the terminal at your project root
 $ npm install @canvas-party/react
 ```
 
-to add canvasParty globaly as a plugin.
+Then import the **CanvasParty** component and give it the desired `tamplate type`
 
 ```jsx
 import { useState } from 'react'

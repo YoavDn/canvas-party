@@ -1,16 +1,16 @@
-# Trippy
+# Starfield
 
-The trippy type doe's not have an options object.
+The starfield type doe's not have an options object.
 passing the options object will not work.
 
-### Example of trippy canvas with react
+### Example of starfield canvas with react
 
 ```jsx
 import { useState } from 'react'
 import CanvasParty from '@canvas-party/react'
 
 function reactApp() {
-  const [canvasType, setCanvasType] = useState('trippy')
+  const [canvasType, setCanvasType] = useState('starfield')
 
   return <CanvasParty type={canvasType} />
 }
