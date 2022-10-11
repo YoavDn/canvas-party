@@ -24,7 +24,7 @@ $ yarn add canvas-party
 ## Basic usage
 
 to create your first canvas first create a wraper on witch the canvas element sits in.
-then use the `createCanvasParty` function with the "type" of the disired [tamplate](/tameplates), this will return a custom canvas.
+then use the `createCanvasParty` function with the "type" of the disired [tamplate](/tamplates/index), this will return a custom canvas.
 The finel step is to append the canvas elemnt to the wraper.
 
 ```js

@@ -3,7 +3,7 @@ export default {
   description: 'justplaying arount.',
 
   themeConfig: {
-    logo: '../public/canvas-party.svg',
+    logo: '/canvas-party.svg',
     nav: [
       {
         text: 'Guide',
