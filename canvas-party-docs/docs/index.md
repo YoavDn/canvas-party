@@ -58,7 +58,7 @@ onMounted(() => {
 
 <div class="actions-btns">
 <a class="get-started" href="/guide/getting-started">Get Started</a>
-<a class="view-tamplates" href="/tamplates/tamplates">View tamplates</a>
+<a class="view-tamplates" href="/tamplates/indexyarn">View tamplates</a>
 </div>
   </div>
 
