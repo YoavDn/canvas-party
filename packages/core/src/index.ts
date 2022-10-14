@@ -13,27 +13,33 @@ export function createCanvasParty(el: HTMLElement, options: IOptionsType) {
 
   //tamplate chooser
   const { colors, count } = options;
-
-  switch (options.type) {
-    case 'confetti':
-      tamplates.confetti(c!, canvas, colors, count);
-      break;
-    case 'trippy':
-      tamplates.trippy(c!, canvas);
-      break;
-    case 'fireworks':
-      tamplates.fireworks(c!, canvas, colors, count);
-      break;
-    case 'starfield':
-      tamplates.starfield(c!, canvas);
-      break;
-    case 'tvSnow':
-      tamplates.tvSnow(c!, canvas);
-      break;
-    case 'underground':
-      tamplates.underground(c!, canvas);
-      break;
+  if (options.type === 'confetti' || options.type === 'fireworks') {
+    tamplates[options.type](c!, canvas, colors, count);
+  } else {
+    tamplates[options.type](c!, canvas);
   }
-
   return canvas;
+
+  // switch (options.type) {
+  //   case 'confetti':
+  //     tamplates.confetti(c!, canvas, colors, count);
+  //     break;
+  //   case 'trippy':
+  //     tamplates.trippy(c!, canvas);
+  //     break;
+  //   case 'fireworks':
+  //     tamplates.fireworks(c!, canvas, colors, count);
+  //     break;
+  //   case 'starfield':
+  //     tamplates.starfield(c!, canvas);
+  //     break;
+  //   case 'tvSnow':
+  //     tamplates.tvSnow(c!, canvas);
+  //     break;
+  //   case 'underground':
+  //     tamplates.underground(c!, canvas);
+  //     break;
+  // }
+
+  // return canvas;
 }
