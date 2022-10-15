@@ -37,7 +37,7 @@ const myCanvasParty = createCanvasParty(canvasWraper, { type: 'confetti' })
 canvasWraper.appendChild(myCanvasParty)
 ```
 
-## Tamplate customistion:
+## Tamplate customization:
 
 Currently **only** the `confetti` and `fireworks` tamplates have customiztion options, putting a options attribute on other
 templates **will not work**
@@ -50,7 +50,7 @@ interface canvasOptions {
 }
 ```
 
-Example of custom firework canvas:
+Example of custom fireworks canvas:
 
 ```js
 const myCusomCanvas = createCanvasParty(canvasWraper, {
