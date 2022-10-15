@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "Yoav Mendelson",
+  "type": "module",
   "license": "MIT",
   "scripts": {
     "docs:dev": "vitepress dev docs",
@@ -10,10 +11,9 @@
     "docs:serve": "vitepress serve docs"
   },
   "devDependencies": {
-    "@canvas-party/vue": "^0.0.2",
+    "@canvas-party/vue": "^0.0.4",
     "sass": "^1.55.0",
-    "vitepress": "^1.0.0-alpha.18",
+    "vitepress": "^1.0.0-alpha.21",
     "vue": "^3.2.40"
-  },
-  "dependencies": {}
+  }
 }

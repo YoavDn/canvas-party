@@ -31,17 +31,33 @@ features:
     details: Lorem ipsum...
 --- -->
 
-<script setup>
-  import { useData } from 'vitepress'
-  import {ref, onMounted} from 'vue'
+<script>
+export default {
+  data() {
+    return {
+      dynamicComponent: null
+    }
+  },
 
-  const wraper = ref(null)
-  const canvas = ref(null)
-  
+  mounted() {
+    import('@canvas-party/vue').then((module) => {
+      this.dynamicComponent = module.default
+      console.log(this.dynamicComponent)
+    })
+  }
+}
 </script>
 
   <div ref="wraper" class="bg-wraper">
-  <CanvasParty class="index-canvas" :type="'confetti'"/>
+  <!-- <CanvasParty class="index-canvas" :type="'confetti'"/> -->
+   <component
+   class="index-canvas" 
+    v-if="dynamicComponent"
+    :is="dynamicComponent"
+    :type="'confetti'"
+    >
+    
+  </component>
   </div>
   <div class=hero>
   <h2 class="title">Canvas Party</h2>
