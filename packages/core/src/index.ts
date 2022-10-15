@@ -18,28 +18,6 @@ export function createCanvasParty(el: HTMLElement, options: IOptionsType) {
   } else {
     tamplates[options.type](c!, canvas);
   }
+
   return canvas;
-
-  // switch (options.type) {
-  //   case 'confetti':
-  //     tamplates.confetti(c!, canvas, colors, count);
-  //     break;
-  //   case 'trippy':
-  //     tamplates.trippy(c!, canvas);
-  //     break;
-  //   case 'fireworks':
-  //     tamplates.fireworks(c!, canvas, colors, count);
-  //     break;
-  //   case 'starfield':
-  //     tamplates.starfield(c!, canvas);
-  //     break;
-  //   case 'tvSnow':
-  //     tamplates.tvSnow(c!, canvas);
-  //     break;
-  //   case 'underground':
-  //     tamplates.underground(c!, canvas);
-  //     break;
-  // }
-
-  // return canvas;
 }
