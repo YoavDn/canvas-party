@@ -203,9 +203,9 @@
 }
 
 /* home page */
-
-.bg-wraper {
+.index-canvas {
   background-color: var(--vp-c-hero-bg);
+  height: 92vh;
 }
 
 .hero {

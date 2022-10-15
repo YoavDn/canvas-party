@@ -34,22 +34,15 @@ features:
 <script setup>
   import { useData } from 'vitepress'
   import {ref, onMounted} from 'vue'
-  import { createCanvasParty } from '../../packages/core/lib'
+  import CanvasParty from '../../packages/canvas-party-vue/src/components/CanvasParty.vue'
 
   const wraper = ref(null)
   const canvas = ref(null)
-
-onMounted(() => {
-  if(wraper.value ) {
-    canvas.value= createCanvasParty(wraper.value , {type: 'confetti'})
-    const wraperEl  = document.querySelector('.bg-wraper')    
-    wraperEl.appendChild(canvas.value)
-  }
-})
   
 </script>
 
   <div ref="wraper" class="bg-wraper">
+  <CanvasParty class="index-canvas" :type="'confetti'"/>
   </div>
   <div class=hero>
   <h2 class="title">Canvas Party</h2>
