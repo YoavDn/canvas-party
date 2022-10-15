@@ -1,7 +1,5 @@
 # Canvas party
 
-## Getting started
-
 **warning**
 cavnasParty is currently in alpha status. It is already suitable
 for out-of-the-box documentation use, but the API may still change between minor releases.
