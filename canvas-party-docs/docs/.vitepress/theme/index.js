@@ -2,5 +2,11 @@
 import DefaultTheme from 'vitepress/theme'
 import './custom.css'
 import './tamplate.css'
+import CanvasParty from '@canvas-party/vue'
 
-export default DefaultTheme
+export default {
+  ...DefaultTheme,
+  enhanceApp({ app }) {
+    app.use(CanvasParty)
+  },
+}

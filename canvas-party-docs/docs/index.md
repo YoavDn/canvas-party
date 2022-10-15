@@ -34,7 +34,6 @@ features:
 <script setup>
   import { useData } from 'vitepress'
   import {ref, onMounted} from 'vue'
-  import CanvasParty from '../../packages/canvas-party-vue/src/components/CanvasParty.vue'
 
   const wraper = ref(null)
   const canvas = ref(null)

@@ -3,7 +3,6 @@ layout: home
 ---
 
 <script setup>
-    import CanvasParty from '../../../packages/canvas-party-vue/src/components/CanvasParty.vue'
  
     const tamplates = [
         {
