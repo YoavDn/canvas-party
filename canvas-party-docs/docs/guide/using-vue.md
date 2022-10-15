@@ -9,7 +9,7 @@ To get started run this command in the terminal
 $ npm install @canvas-party/vue
 ```
 
-to add canvasParty globaly as a plugin.
+to add canvasParty component globaly.
 
 ```js
 import { createApp } from 'vue'
@@ -19,7 +19,7 @@ import App from './App.vue'
 
 const app = createApp(App)
 
-app.use(CanvasParty)
+app.component('canvas-party', CanvasParty)
 app.mount('#app')
 ```
 
@@ -38,7 +38,7 @@ const canvasOptions = reactive({
 
 <template>
   <div>
-    <CanvasParty :type="canvasType" :options="options" />
+    <canvas-party :type="canvasType" :options="options" />
   </div>
 </template>
 ```
