@@ -5,7 +5,7 @@
   display: grid;
   margin: auto;
   gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 0.5fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 0.5fr));
 }
 
 .tamplate-card {
