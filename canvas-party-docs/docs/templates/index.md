@@ -3,42 +3,44 @@ layout: home
 ---
 
 <script>
+  import {shallowRef, onMounted} from 'vue'
 export default {
-  data() {
-    return {
-      dynamicComponent: null,
-        templates: [
-            {
-            type:'trippy',
-            title: 'Trippy'
-            },
-            {type:'tvSnow',
-            title: 'TV Snow'
-             },
-            {
-                type: 'confetti',
-                title: 'Confetti'
-            },
-            {
-            type:'underground',
-            title: 'Underground'
-            },
-            {
-             type:'starfield',
-             title: 'Starfield'
-            },
-          
-        ]
+  setup() {
+    const dynamicComponent = shallowRef(null)
+    const templates = [
+      {
+        type:'trippy',
+        title:'Trippy'
+      },
+      { 
+        type:'tvSnow',
+        title: 'TV Snow'
+      },
+      {
+        type: 'confetti',
+        title: 'Confetti'
+      },
+      {
+        type:'underground',
+        title: 'Underground'
+      },
+      {
+        type:'starfield',
+        title: 'Starfield'
+      },
+      ]
+        onMounted(() => {
+        import('@canvas-party/vue').then((module) => {
+          dynamicComponent.value = module.default
+        })
 
-    }
-  },
-
-  mounted() {
-    import('@canvas-party/vue').then((module) => {
-      this.dynamicComponent = module.default
-      console.log(this.dynamicComponent)
     })
-  },
+        return {
+          dynamicComponent,
+          templates
+        }
+   },
+
 }
 
 </script>
