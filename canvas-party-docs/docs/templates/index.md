@@ -24,9 +24,14 @@ export default {
         type:'underground',
         title: 'Underground'
       },
+    
       {
         type:'starfield',
         title: 'Starfield'
+      },
+        {
+        type:'gradient',
+        title: 'Gradient'
       },
       ]
         onMounted(() => {

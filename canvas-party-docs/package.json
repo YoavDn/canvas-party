@@ -11,7 +11,7 @@
     "docs:serve": "vitepress serve docs"
   },
   "devDependencies": {
-    "@canvas-party/vue": "^0.0.6",
+    "@canvas-party/vue": "^0.0.7",
     "sass": "^1.55.0",
     "vitepress": "^1.0.0-alpha.21",
     "vue": "^3.2.40"

@@ -45,6 +45,7 @@ export default {
           { text: 'Starfield', link: '/templates/starfield' },
           { text: 'TV snow', link: '/templates/tvSnow' },
           { text: 'Underground', link: '/templates/underground' },
+          { text: 'Gradient', link: '/templates/gradient' },
         ],
       },
     ],
