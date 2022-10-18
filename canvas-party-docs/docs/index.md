@@ -2,35 +2,6 @@
 layout: home
 ---
 
-<!-- ---
-layout: home
-
-hero:
-  name: Canvas Party
-  text: Background Animations library.
-  tagline: create beatufiull canvas background with ease
-  image:
-    src: /public/canvas-party.svg
-    alt: Canvas Party png
-  actions:
-    - theme: brand
-      text: Get Started
-      link: /guide/what-is-canvas-party
-    - theme: alt
-      text: View on GitHub
-      link: https://github.com/vuejs/vitepress
-features:
-  - icon: 🖼
-    title: Tamplates
-    details: Vite, The DX that can't be beat
-  - icon: 🧙
-    title: Interactive
-    details: Power of canvas meets avrage users Lorem Interactive
-  - icon: 😌
-    title: Simple and minimal, always
-    details: Lorem ipsum...
---- -->
-
 <script>
 export default {
   data() {

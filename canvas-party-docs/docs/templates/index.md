@@ -48,7 +48,7 @@ export default {
 
  <div class="templates-container">
     <div class="template-card" v-for="template in templates">
-    <a :href="`/template/${template.type}`">
+    <a :href="`/templates/${template.type}`">
     <component
      class="canvas-card"  
      v-if="dynamicComponent"
@@ -60,8 +60,3 @@ export default {
         <h2>{{template.title}}</h2>
      </div>
  </div>
-
-<style> 
-
-
-</style>

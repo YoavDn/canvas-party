@@ -53,3 +53,7 @@
     font-size: 1.4em;
   }
 }
+
+.canvas-example {
+  height: 300px;
+}

@@ -17,3 +17,31 @@ function reactApp() {
 
 export default reactApp
 ```
+
+### **Result**
+
+<script>
+export default {
+  data() {
+    return {
+      dynamicComponent: null
+    }
+  },
+
+  mounted() {
+    import('@canvas-party/vue').then((module) => {
+      this.dynamicComponent = module.default
+      console.log(this.dynamicComponent)
+    })
+  }
+}
+</script>
+
+<component
+   class="canvas-example" 
+    v-if="dynamicComponent"
+    :is="dynamicComponent"
+    :type="'tvSnow'"
+    >
+
+  </component>
