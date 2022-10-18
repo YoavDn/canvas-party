@@ -3,8 +3,8 @@ import { defineProps, ref, watch, onMounted, onUnmounted } from 'vue'
 import _ from 'lodash'
 // import { useCanvasParty } from '../../../core/lib'
 import { useCanvasParty } from '../../../core/lib'
-
-import { TTemplates } from '../../../core/src/types'
+import { templates } from '../../../core/src/templates/index'
+import type { TTemplates } from '../../../core/src/types'
 
 const props = defineProps<{
   type: TTemplates
@@ -26,8 +26,12 @@ onMounted(() => {
 watch(
   () => props.type,
   type => {
-    canvasParty.value.removeCanvas()
-    canvasParty.value.setCanvasParty(type)
+    if (Object.keys(templates).includes(type)) {
+      canvasParty.value.removeCanvas()
+      canvasParty.value.setCanvasParty(type)
+    } else {
+      console.error('Invalid canvasParty template name')
+    }
   }
 )
 

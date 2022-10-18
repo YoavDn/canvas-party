@@ -2,8 +2,7 @@ import { templates } from './templates/index.js';
 import { IOptionsType, TTemplates } from './types';
 
 export function useCanvasParty(el: HTMLElement, options: IOptionsType) {
-  let type = options.type;
-  console.log('here core ');
+  let type: TTemplates = options.type;
 
   const canvas = document.createElement('canvas');
   const c = canvas.getContext('2d');
@@ -19,7 +18,7 @@ export function useCanvasParty(el: HTMLElement, options: IOptionsType) {
   let template: any;
 
   function drawTemplate() {
-    if (options.type === 'confetti') {
+    if (type === 'confetti') {
       template = templates[type](c!, canvas, colors, count);
     } else {
       template = templates[type](c!, canvas);
@@ -28,8 +27,12 @@ export function useCanvasParty(el: HTMLElement, options: IOptionsType) {
   drawTemplate();
 
   function setCanvasParty(newType: TTemplates) {
-    type = newType;
-    drawTemplate();
+    if (Object.keys(templates).includes(type)) {
+      type = newType;
+      drawTemplate();
+    } else {
+      console.error('Invalid canvasParty template name');
+    }
   }
 
   function removeCanvas() {
