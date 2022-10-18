@@ -1,7 +1,7 @@
-export type TTamplates = 'confetti' | 'trippy' | 'fireworks' | 'starfield' | 'tvSnow' | 'underground';
+export type TTemplates = 'confetti' | 'trippy' | 'starfield' | 'tvSnow' | 'underground';
 
 export interface IOptionsType {
-  type: TTamplates;
+  type: TTemplates;
   count?: number;
   colors?: string[];
 }

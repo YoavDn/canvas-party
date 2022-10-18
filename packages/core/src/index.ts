@@ -1,7 +1,10 @@
-import { tamplates } from './tamplates/index';
-import { IOptionsType } from './types';
+import { templates } from './templates/index.js';
+import { IOptionsType, TTemplates } from './types';
 
-export function createCanvasParty(el: HTMLElement, options: IOptionsType) {
+export function useCanvasParty(el: HTMLElement, options: IOptionsType) {
+  let type = options.type;
+  console.log('here core ');
+
   const canvas = document.createElement('canvas');
   const c = canvas.getContext('2d');
   canvas.style.width = '100%';
@@ -11,13 +14,32 @@ export function createCanvasParty(el: HTMLElement, options: IOptionsType) {
   canvas.height = elRect.height;
   canvas.width = elRect.width;
 
-  //tamplate chooser
+  //template chooser
   const { colors, count } = options;
-  if (options.type === 'confetti' || options.type === 'fireworks') {
-    tamplates[options.type](c!, canvas, colors, count);
-  } else {
-    tamplates[options.type](c!, canvas);
+  let template: any;
+
+  function drawTemplate() {
+    if (options.type === 'confetti') {
+      template = templates[type](c!, canvas, colors, count);
+    } else {
+      template = templates[type](c!, canvas);
+    }
+  }
+  drawTemplate();
+
+  function setCanvasParty(newType: TTemplates) {
+    type = newType;
+    drawTemplate();
   }
 
-  return canvas;
+  function removeCanvas() {
+    template.stop();
+  }
+
+  window.requestAnimationFrame;
+  return {
+    setCanvasParty,
+    canvas,
+    removeCanvas,
+  };
 }

@@ -212,6 +212,8 @@ export function useTrippy(c: CanvasRenderingContext2D, canvas: HTMLCanvasElement
     return g;
   };
 
+  let myReq: number;
+
   const tick = (time: number) => {
     moveHeightMaps(time);
     updatePalette(time);
@@ -221,7 +223,15 @@ export function useTrippy(c: CanvasRenderingContext2D, canvas: HTMLCanvasElement
     requestAnimationFrame(tick);
   };
 
-  requestAnimationFrame(tick);
+  myReq = requestAnimationFrame(tick);
+
+  function stop() {
+    window.cancelAnimationFrame(myReq);
+  }
+
+  return {
+    stop,
+  };
 }
 
 const distance = (x: number, y: number) => Math.sqrt(x * x + y * y);

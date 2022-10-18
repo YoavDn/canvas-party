@@ -8,25 +8,39 @@ export function useConfetti(
   colors: string[] = COLORS,
   confettiCount: number = NUM_CONFETTI,
 ) {
-  let h :number
-  let w :number
+  let h: number;
+  let w: number;
 
   const cofetties: Confeti[] = [];
   for (let i = 0; i < confettiCount; i++) {
     cofetties.push(new Confeti(canvas, c, colors));
   }
 
+  canvas.addEventListener('mousemove', (e) => {
+    cofetties.forEach((cofetti) => (cofetti.xpos = e.clientX / canvas.width));
+  });
+
+  let myReq: number;
 
   function step() {
-    requestAnimationFrame(step);
     c.clearRect(0, 0, canvas.width, canvas.height);
     cofetties.forEach((cofetti) => cofetti.draw());
+    myReq = requestAnimationFrame(step);
   }
-  step();
-  canvas.addEventListener('mousemove', (e) => {
-    cofetties.forEach((cofetti) => (cofetti.xpos = e.pageX / canvas.width));
-  });
+  // step();
+
+  myReq = requestAnimationFrame(step);
+
+  function stop() {
+    window.cancelAnimationFrame(myReq);
+  }
+
+  return {
+    stop,
+  };
 }
+
+/// class logic
 
 const range = (a: number, b: number) => (b - a) * Math.random() + a;
 

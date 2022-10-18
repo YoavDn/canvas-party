@@ -60,6 +60,8 @@ export function useStarfield(c: CanvasRenderingContext2D, canvas: HTMLCanvasElem
     requestAnimationFrame(tick);
   };
 
+  let myReq: number;
+
   const tick = (time: number) => {
     let elapsed = time - prevTime;
     prevTime = time;
@@ -88,8 +90,16 @@ export function useStarfield(c: CanvasRenderingContext2D, canvas: HTMLCanvasElem
       putPixel(x, y, b);
     }
 
-    requestAnimationFrame(tick);
+    myReq = requestAnimationFrame(tick);
   };
 
-  requestAnimationFrame(init);
+  myReq = requestAnimationFrame(init);
+
+  function stop() {
+    window.cancelAnimationFrame(myReq);
+  }
+
+  return {
+    stop,
+  };
 }
