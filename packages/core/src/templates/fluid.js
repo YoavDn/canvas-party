@@ -1,4 +1,4 @@
-export function useFluid(canvas) {
+export function useFluid(gl, canvas) {
   resizeCanvas();
 
   let config = {
@@ -46,7 +46,7 @@ export function useFluid(canvas) {
   let splatStack = [];
   pointers.push(new PointerPrototype());
 
-  const { gl, ext } = getWebGLContext(canvas);
+  const { ext } = getWebGLContext(canvas);
 
   if (isMobile()) {
     config.DYE_RESOLUTION = 512;
@@ -67,7 +67,7 @@ export function useFluid(canvas) {
       preserveDrawingBuffer: false,
     };
 
-    let gl = canvas.getContext('webgl2', params);
+    // let gl = canvas.getContext('webgl2', params);
     const isWebGL2 = !!gl;
     if (!isWebGL2) gl = canvas.getContext('webgl', params) || canvas.getContext('experimental-webgl', params);
 
@@ -1007,7 +1007,8 @@ export function useFluid(canvas) {
 
   let lastUpdateTime = Date.now();
   let colorUpdateTimer = 0.0;
-  update();
+  let myReq;
+  // update();
 
   function update() {
     const dt = calcDeltaTime();
@@ -1017,6 +1018,12 @@ export function useFluid(canvas) {
     if (!config.PAUSED) step(dt);
     render(null);
     requestAnimationFrame(update);
+  }
+
+  myReq = requestAnimationFrame(update);
+
+  function stop() {
+    window.cancelAnimationFrame(myReq);
   }
 
   function calcDeltaTime() {
@@ -1472,4 +1479,8 @@ export function useFluid(canvas) {
     }
     return hash;
   }
+
+  return {
+    stop,
+  };
 }

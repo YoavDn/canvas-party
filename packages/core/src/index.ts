@@ -12,7 +12,7 @@ const webglParams = {
 export function useCanvasParty(el: HTMLElement, options: IOptionsType) {
   let type: TTemplates = options.type;
 
-  const canvas = document.createElement('canvas');
+  let canvas = document.createElement('canvas');
 
   let c = options.type === 'fluid' ? canvas.getContext('webgl2', webglParams) : canvas.getContext('2d');
 
@@ -31,7 +31,7 @@ export function useCanvasParty(el: HTMLElement, options: IOptionsType) {
     if (type === 'confetti') {
       template = templates[type](c! as CanvasRenderingContext2D, canvas, colors, count);
     } else if (type === 'fluid') {
-      template = templates[type](canvas);
+      template = templates[type](c! as WebGL2RenderingContext, canvas);
     } else {
       template = templates[type](c! as CanvasRenderingContext2D, canvas);
     }
@@ -40,6 +40,14 @@ export function useCanvasParty(el: HTMLElement, options: IOptionsType) {
 
   function setCanvasParty(newType: TTemplates) {
     if (Object.keys(templates).includes(type)) {
+      template.stop();
+
+      if (type === 'fluid') {
+        canvas = document.createElement('canvas');
+        c = canvas.getContext('2d');
+        console.log(c);
+      }
+
       type = newType;
       drawTemplate();
     } else {
