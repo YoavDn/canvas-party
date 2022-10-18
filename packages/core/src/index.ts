@@ -1,11 +1,21 @@
 import { templates } from './templates/index.js';
 import { IOptionsType, TTemplates } from './types';
 
+const webglParams = {
+  alpha: true,
+  depth: false,
+  stencil: false,
+  antialias: false,
+  preserveDrawingBuffer: false,
+};
+
 export function useCanvasParty(el: HTMLElement, options: IOptionsType) {
   let type: TTemplates = options.type;
 
   const canvas = document.createElement('canvas');
-  const c = canvas.getContext('2d');
+
+  let c = options.type === 'fluid' ? canvas.getContext('webgl2', webglParams) : canvas.getContext('2d');
+
   canvas.style.width = '100%';
   canvas.style.height = '100%';
   let elRect = el.getBoundingClientRect();
@@ -19,9 +29,11 @@ export function useCanvasParty(el: HTMLElement, options: IOptionsType) {
 
   function drawTemplate() {
     if (type === 'confetti') {
-      template = templates[type](c!, canvas, colors, count);
+      template = templates[type](c! as CanvasRenderingContext2D, canvas, colors, count);
+    } else if (type === 'fluid') {
+      template = templates[type](canvas);
     } else {
-      template = templates[type](c!, canvas);
+      template = templates[type](c! as CanvasRenderingContext2D, canvas);
     }
   }
   drawTemplate();
