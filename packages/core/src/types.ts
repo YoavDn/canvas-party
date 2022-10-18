@@ -1,4 +1,4 @@
-export type TTemplates = 'confetti' | 'trippy' | 'starfield' | 'tvSnow' | 'underground';
+export type TTemplates = 'confetti' | 'trippy' | 'starfield' | 'tvSnow' | 'underground' | 'gradient';
 
 export interface IOptionsType {
   type: TTemplates;
