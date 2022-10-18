@@ -1,12 +1,14 @@
 {
   "name": "@canvas-party/react",
-  "version": "0.0.1",
-  "files" : ["dist"],
+  "version": "0.0.2",
+  "files": [
+    "dist"
+  ],
   "main": "./dist/canvas-party-react.umd.js",
   "module": "./dist/canvas-party-react.es.js",
   "types": "./dist/index.d.ts",
-  "exports" :{
-    "." : {
+  "exports": {
+    ".": {
       "import": "./dist/canvas-party-react.es.js",
       "require": "./dist/canvas-party-react.umd.js"
     }
