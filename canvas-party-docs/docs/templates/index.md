@@ -33,6 +33,10 @@ export default {
         type:'gradient',
         title: 'Gradient'
       },
+       {
+        type:'fluid',
+        title: 'Fluid'
+      },
       ]
         onMounted(() => {
         import('@canvas-party/vue').then((module) => {

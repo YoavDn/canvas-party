@@ -44,6 +44,7 @@ export default {
           { text: 'Trippy', link: '/templates/trippy' },
           { text: 'Starfield', link: '/templates/starfield' },
           { text: 'TV snow', link: '/templates/tvSnow' },
+          { text: 'fluid', link: '/templates/fluid' },
           { text: 'Underground', link: '/templates/underground' },
           { text: 'Gradient', link: '/templates/gradient' },
         ],
