@@ -14,7 +14,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),
-      name: 'canvas-party-react',
+      name: 'canvasPartyReact',
       formats: ['es', 'umd'],
       fileName: format => `canvas-party-react.${format}.js`,
     },

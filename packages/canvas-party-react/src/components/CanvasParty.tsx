@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import _ from 'lodash'
 import React from 'react'
 import { useCanvasParty } from '../../../core/lib'
 import { TTemplates } from '../../../core/src/types'
@@ -15,6 +16,7 @@ type TProps = {
 
 const CanvasParty: React.FunctionComponent<TProps> = ({ options, type }) => {
   const canvasWrapperRef = useRef<any>()
+  const uniqId = _.uniqueId('canvas_')
 
   useEffect(() => {
     if (!canvasWrapperRef.current) return
@@ -31,7 +33,9 @@ const CanvasParty: React.FunctionComponent<TProps> = ({ options, type }) => {
     return () => cp.removeCanvas()
   }, [type, options])
 
-  return <div ref={canvasWrapperRef} className="canvas-wrapper"></div>
+  return (
+    <div ref={canvasWrapperRef} id={uniqId} className="canvas-wrapper"></div>
+  )
 }
 
 export default CanvasParty
