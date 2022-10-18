@@ -1,12 +1,14 @@
-# Canvas party
+# Getting started
 
-**warning**
-cavnasParty is currently in alpha status. It is already suitable
+## HTML canvas animations library
+
+warning
+canvasParty is currently in alpha status. It is already suitable
 for out-of-the-box documentation use, but the API may still change between minor releases.
 
-## Installstion
+## Installation
 
-If you want to use **CanvasParty** with a JavaScript framework section in the docs
+If you want to use **CanvasParty** with a JavaScript framework see the [Frameworks](/guide/using-react) section
 
 With npm:
 
@@ -22,36 +24,36 @@ $ yarn add canvas-party
 
 ## Basic usage
 
-to create your first canvas first create a wraper on witch the canvas element sits in.
-then use the `createCanvasParty` function with the "type" of the disired [tamplate](/tamplates/index), this will return a custom canvas.
-The finel step is to append the canvas elemnt to the wraper.
+to create your first canvas first create a wrapper on witch the canvas element sits in.
+then use the `useCanvasParty` function with the "type" of the desired [template](/templates/index), this will return a custom canvas.
+The final step is to append the canvas element to the wrapper.
 
 ```js
-import { createCanvasParty } from 'canvas-party'
+import { useCanvasParty } from 'canvas-party'
 
-const canvasWraper = document.qeurySelector('.canvas-wraper')
-const myCanvasParty = createCanvasParty(canvasWraper, { type: 'confetti' })
+const canvasWrapper = document.querySelector('.canvas-wrapper')
+const canvasParty = useCanvasParty(canvasWrapper, { type: 'confetti' })
 
-canvasWraper.appendChild(myCanvasParty)
+canvasWrapper.appendChild(canvasParty.canvas)
 ```
 
-## Tamplate customization:
+## Template customization:
 
-Currently **only** the `confetti` and `fireworks` tamplates have customiztion options, putting a options attribute on other
+Currently **only** the `confetti` and `fireworks` templates have customization options, putting a options attribute on other
 templates **will not work**
 
 ```ts
 interface canvasOptions {
-  type: tamplateName
+  type: templateName
   colors?: string[]
   count?: number
 }
 ```
 
-Example of custom fireworks canvas:
+Example of custom firework canvas:
 
 ```js
-const myCusomCanvas = createCanvasParty(canvasWraper, {
+const myCustomCanvas = useCanvasParty(canvasWrapper, {
   type: 'fireworks',
   colors: ['#A3F7B5', '#DE3C4B', '#87F5FB'],
   count: 450,

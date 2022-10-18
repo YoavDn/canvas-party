@@ -24,16 +24,16 @@ $ yarn add canvas-party
 ## Basic usage
 
 to create your first canvas first create a wrapper on witch the canvas element sits in.
-then use the `createCanvasParty` function with the "type" of the desired [template](/templates/index), this will return a custom canvas.
+then use the `useCanvasParty` function with the "type" of the desired [template](/templates/index), this will return a custom canvas.
 The final step is to append the canvas element to the wrapper.
 
 ```js
-import { createCanvasParty } from 'canvas-party'
+import { useCanvasParty } from 'canvas-party'
 
 const canvasWrapper = document.querySelector('.canvas-wrapper')
-const myCanvasParty = createCanvasParty(canvasWrapper, { type: 'confetti' })
+const canvasParty = useCanvasParty(canvasWrapper, { type: 'confetti' })
 
-canvasWrapper.appendChild(myCanvasParty)
+canvasWrapper.appendChild(canvasParty.canvas)
 ```
 
 ## Template customization:
@@ -52,7 +52,7 @@ interface canvasOptions {
 Example of custom firework canvas:
 
 ```js
-const myCustomCanvas = createCanvasParty(canvasWrapper, {
+const myCustomCanvas = useCanvasParty(canvasWrapper, {
   type: 'fireworks',
   colors: ['#A3F7B5', '#DE3C4B', '#87F5FB'],
   count: 450,
