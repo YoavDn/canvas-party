@@ -1,40 +1,41 @@
 <script setup lang="ts">
-import { defineProps, ref, watchEffect, onMounted } from 'vue'
+import { defineProps, ref, watch, onMounted, onUnmounted } from 'vue'
 import _ from 'lodash'
-import { createCanvasParty } from '../../../core/lib'
-import { TTamplates } from '../../../core/src/types'
+// import { useCanvasParty } from '../../../core/lib'
+import { useCanvasParty } from '../../../core/lib'
+
+import { TTemplates } from '../../../core/src/types'
 
 const props = defineProps<{
-  type: TTamplates
+  type: TTemplates
   options?: { colors?: string[]; count?: number }
 }>()
 
 const uniqId = _.uniqueId('canvas_')
-const canvasParty = ref<HTMLCanvasElement | null>(null)
+const canvasParty = ref<any>(null)
 
 onMounted(() => {
-  const wraper = document.getElementById(uniqId) as HTMLDivElement
-  canvasParty.value = createCanvasParty(wraper, {
+  const wrapper = document.getElementById(uniqId) as HTMLDivElement
+  canvasParty.value = useCanvasParty(wrapper, {
     type: props.type,
     ...props.options,
   })
-  wraper.appendChild(canvasParty.value)
+  wrapper.appendChild(canvasParty.value.canvas)
 })
 
-watchEffect(() => {
-  console.log(props.options, props.type)
-  const wraper = document.getElementById(uniqId) as HTMLDivElement
-  if (!wraper) return
-  wraper.removeChild<HTMLCanvasElement>(canvasParty.value!)
-  canvasParty.value = createCanvasParty(wraper, {
-    type: props.type,
-    ...props.options,
-    
-  })
-  wraper.appendChild(canvasParty.value)
+watch(
+  () => props.type,
+  type => {
+    canvasParty.value.removeCanvas()
+    canvasParty.value.setCanvasParty(type)
+  }
+)
+
+onUnmounted(() => {
+  canvasParty.value.removeCanvas()
 })
 </script>
 
 <template>
-  <div class="canvas-wraper" :id="uniqId"></div>
+  <div class="canvas-wrapper" :id="uniqId"></div>
 </template>
