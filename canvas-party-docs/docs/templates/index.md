@@ -27,10 +27,7 @@ export default {
              type:'starfield',
              title: 'Starfield'
             },
-            {
-             type:'fireworks',
-             title: 'Fireworks'
-            },
+          
         ]
 
     }

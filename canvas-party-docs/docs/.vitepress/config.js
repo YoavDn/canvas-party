@@ -42,7 +42,6 @@ export default {
         items: [
           { text: 'Confetti', link: '/templates/confetti' },
           { text: 'Trippy', link: '/templates/trippy' },
-          { text: 'Fireworks', link: '/templates/fireworks' },
           { text: 'Starfield', link: '/templates/starfield' },
           { text: 'TV snow', link: '/templates/tvSnow' },
           { text: 'Underground', link: '/templates/underground' },

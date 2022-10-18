@@ -201,7 +201,9 @@
 .VPSidebar {
   border-right: solid 1px var(--vp-c-divider-dark-2) !important;
 }
-
+.VPNavBarTitle {
+  background-color: var(--vp-c-w) !important;
+}
 /* home page */
 .index-canvas {
   background-color: var(--vp-c-hero-bg);
@@ -287,7 +289,7 @@
     box-shadow: 4px 4px 70px var(--vp-c-text-1);
   }
 
-  .view-tamplates:hover {
+  .view-templates:hover {
     text-decoration: underline;
   }
 }

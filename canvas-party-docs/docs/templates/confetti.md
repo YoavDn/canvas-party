@@ -12,8 +12,8 @@ import CanvasParty from '@canvas-party/react'
 function reactApp() {
   const [canvasType, setCanvasType] = useState('confetti')
   const [canvasOptions, setCanvasOptions] = useState({
-    colors: ['#ABDF75', '#DB5461', '#FDE74C'],
-    count: 200,
+    colors: ['#ffd60a', '#ffc300', '#aacc00'],
+    count: 400,
   })
 
   return <CanvasParty type={canvasType} options={canvasOptions} />
@@ -45,6 +45,7 @@ export default {
     v-if="dynamicComponent"
     :is="dynamicComponent"
     :type="'confetti'"
+    :options="{colors: ['#ffd60a', '#ffc300', '#aacc00'], count: 400}"
     >
 
   </component>

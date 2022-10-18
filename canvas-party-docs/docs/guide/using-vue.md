@@ -26,7 +26,7 @@ app.mount('#app')
 Adding your first canvas in Vue
 
 ```vue
-<script setup lang="ts">
+<script setup>
 import { ref, reactive } from 'vue'
 
 const canvasType = ref('confetti')
