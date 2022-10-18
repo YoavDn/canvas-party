@@ -38,7 +38,7 @@ canvasWrapper.appendChild(canvasParty.canvas)
 
 ## Template customization:
 
-Currently **only** the `confetti` and `fireworks` templates have customization options, putting a options attribute on other
+Currently **only** the `confetti` template have customization options, putting a options attribute on other
 templates **will not work**
 
 ```ts
@@ -49,11 +49,11 @@ interface canvasOptions {
 }
 ```
 
-Example of custom firework canvas:
+Example of custom confetti canvas:
 
 ```js
 const myCustomCanvas = useCanvasParty(canvasWrapper, {
-  type: 'fireworks',
+  type: 'confetti',
   colors: ['#A3F7B5', '#DE3C4B', '#87F5FB'],
   count: 450,
 })
