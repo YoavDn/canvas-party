@@ -1,4 +1,4 @@
-.tamplates-container {
+.templates-container {
   /* height: 20px; */
   max-width: 1400px;
   padding: 40px;
@@ -8,12 +8,12 @@
   grid-template-columns: repeat(auto-fill, minmax(300px, 0.5fr));
 }
 
-.tamplate-card {
+.template-card {
   position: relative;
   height: 300px;
 }
 
-.tamplate-card h2 {
+.template-card h2 {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -44,11 +44,11 @@
 }
 
 @media (max-width: 720px) {
-  .tamplates-container {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  .templates-container {
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
   }
 
-  .tamplate-card h2 {
+  .template-card h2 {
     font-weight: 900;
     font-size: 1.4em;
   }

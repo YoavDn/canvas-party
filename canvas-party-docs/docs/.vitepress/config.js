@@ -1,6 +1,6 @@
 export default {
   title: 'CanvasParty',
-  description: 'justplaying arount.',
+  description: 'HTML canvas animations library.',
 
   themeConfig: {
     logo: '/canvas-party.svg',
@@ -8,12 +8,12 @@ export default {
       {
         text: 'Guide',
         items: [
-          { text: 'Intallation', link: '/guide/getting-started' },
+          { text: 'Installation', link: '/guide/getting-started' },
           { text: 'Using Vue', link: '/guide/using-vue' },
           { text: 'Using React', link: '/guide/using-react' },
         ],
       },
-      { text: 'Tamplates', link: '/tamplates/index' },
+      { text: 'Templates', link: '/templates/index' },
     ],
     socialLinks: [
       { icon: 'github', link: 'https://github.com/YoavDn/canvas-party' },
@@ -28,10 +28,7 @@ export default {
     sidebar: [
       {
         text: 'Introduction',
-        items: [
-          { text: 'What is CanvasParty', link: '/guide/what-is-canvas-party' },
-          { text: 'Getting Started', link: '/guide/getting-started' },
-        ],
+        items: [{ text: 'Getting Started', link: '/guide/getting-started' }],
       },
       {
         text: 'Frameworks',
@@ -41,14 +38,14 @@ export default {
         ],
       },
       {
-        text: 'Tamplates',
+        text: 'Templates',
         items: [
-          { text: 'Confetti', link: '/tamplates/confetti' },
-          { text: 'Trippy', link: '/tamplates/trippy' },
-          { text: 'Fireworks', link: '/tamplates/fireworks' },
-          { text: 'Starfield', link: '/tamplates/starfield' },
-          { text: 'TV snow', link: '/tamplates/tvSnow' },
-          { text: 'Underground', link: '/tamplates/underground' },
+          { text: 'Confetti', link: '/templates/confetti' },
+          { text: 'Trippy', link: '/templates/trippy' },
+          { text: 'Fireworks', link: '/templates/fireworks' },
+          { text: 'Starfield', link: '/templates/starfield' },
+          { text: 'TV snow', link: '/templates/tvSnow' },
+          { text: 'Underground', link: '/templates/underground' },
         ],
       },
     ],

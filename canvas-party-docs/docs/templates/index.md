@@ -7,7 +7,7 @@ export default {
   data() {
     return {
       dynamicComponent: null,
-        tamplates: [
+        templates: [
             {
             type:'trippy',
             title: 'Trippy'
@@ -46,19 +46,18 @@ export default {
 
 </script>
 
- <div class="tamplates-container">
-    <div class="tamplate-card" v-for="tamplate in tamplates">
-        <!-- <CanvasParty class="canvas-card"  :type="tamplate.type"/> -->
-    <a :href="`/tamplates/${tamplate.type}`">
+ <div class="templates-container">
+    <div class="template-card" v-for="template in templates">
+    <a :href="`/template/${template.type}`">
     <component
      class="canvas-card"  
      v-if="dynamicComponent"
      :is="dynamicComponent"
-     :type="tamplate.type"
+     :type="template.type"
     >
   </component>
   </a>
-        <h2>{{tamplate.title}}</h2>
+        <h2>{{template.title}}</h2>
      </div>
  </div>
 

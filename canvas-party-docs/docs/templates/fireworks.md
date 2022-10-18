@@ -1,7 +1,7 @@
 # Fireworks
 
 The fireworks type support a options object for extra configuration.
-not passing the options object will results the default fireworks tamplate
+not passing the options object will results the default fireworks template
 
 ### Example of confetti canvas with react
 

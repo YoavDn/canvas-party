@@ -1,6 +1,6 @@
 # CanvasParty with Vue
 
-to add canvasParty to your Vue appliction first install the `@canvas-party/vue` package, then
+To add canvasParty to your Vue application first install the `@canvas-party/vue` package, then
 add it as a plugin in the `main.js` file.
 
 To get started run this command in the terminal
@@ -9,7 +9,7 @@ To get started run this command in the terminal
 $ npm install @canvas-party/vue
 ```
 
-to add canvasParty component globaly.
+To add canvasParty component globally.
 
 ```js
 import { createApp } from 'vue'
@@ -27,7 +27,7 @@ Adding your first canvas in Vue
 
 ```vue
 <script setup lang="ts">
-import { ref, reacitve } from 'vue'
+import { ref, reactive } from 'vue'
 
 const canvasType = ref('confetti')
 const canvasOptions = reactive({

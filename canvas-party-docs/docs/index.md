@@ -48,7 +48,7 @@ export default {
 }
 </script>
 
-  <div ref="wraper" class="bg-wraper">
+  <div ref="wrapper" class="bg-wrapper">
   <!-- <CanvasParty class="index-canvas" :type="'confetti'"/> -->
    <component
    class="index-canvas" 
@@ -66,12 +66,12 @@ export default {
 
 <div class="actions-btns">
 <a class="get-started" href="/guide/getting-started">Get Started</a>
-<a class="view-tamplates" href="/tamplates/index">View tamplates</a>
+<a class="view-templates" href="/templates/index">View templates</a>
 </div>
   </div>
 
 <style> 
-.bg-wraper {
+.bg-wrapper {
   position: absolute;
   z-index: 10;
   height: 91vh;

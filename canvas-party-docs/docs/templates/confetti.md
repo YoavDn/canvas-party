@@ -1,7 +1,7 @@
 # Confetti
 
 The confetti type support options object for extra configuration.
-not passing the options object will results the default Confetti tamplate
+not passing the options object will results the default Confetti template
 
 ### Example of confetti canvas with react
 
