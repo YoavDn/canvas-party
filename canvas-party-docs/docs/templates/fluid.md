@@ -3,7 +3,7 @@
 The fluid template unlike other templates work with WebGL and does not support reactivity features.
 It also activated `only on hover`, keep this in mind when developing on mobile.
 
-### Example of Fluid canvas with react
+## Fluid canvas with react
 
 ```jsx
 import { useState } from 'react'
@@ -20,19 +20,34 @@ export default reactApp
 ### **Result**
 
 <script>
+  import {shallowRef, onMounted} from 'vue'
 export default {
-  data() {
-    return {
-      dynamicComponent: null
-    }
-  },
+  setup () {
+    const dynamicComponent = shallowRef(null) 
+    onMounted(() => {
+      import('@canvas-party/vue').then((module) => {
+        dynamicComponent.value = module.default
+        console.log(this.dynamicComponent)
+        })
 
-  mounted() {
-    import('@canvas-party/vue').then((module) => {
-      this.dynamicComponent = module.default
-      console.log(this.dynamicComponent)
     })
+
+    return {
+      dynamicComponent
+    }
   }
+  // data() {
+  //   return {
+  //     dynamicComponent: null
+  //   }
+  // },
+
+  // mounted() {
+  //   import('@canvas-party/vue').then((module) => {
+  //     this.dynamicComponent = module.default
+  //     console.log(this.dynamicComponent)
+  //   })
+  // }
 }
 </script>
 

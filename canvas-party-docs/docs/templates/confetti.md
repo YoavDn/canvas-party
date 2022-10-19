@@ -24,19 +24,23 @@ export default reactApp
 ### **Result**
 
 <script>
+  import {shallowRef, onMounted} from 'vue'
 export default {
-  data() {
-    return {
-      dynamicComponent: null
-    }
-  },
+  setup () {
+    const dynamicComponent = shallowRef(null) 
+    onMounted(() => {
+      import('@canvas-party/vue').then((module) => {
+        dynamicComponent.value = module.default
+        console.log(this.dynamicComponent)
+        })
 
-  mounted() {
-    import('@canvas-party/vue').then((module) => {
-      this.dynamicComponent = module.default
-      console.log(this.dynamicComponent)
     })
+
+    return {
+      dynamicComponent
+    }
   }
+  
 }
 </script>
 

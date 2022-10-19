@@ -3,7 +3,7 @@ export default {
   description: 'HTML canvas animations library.',
 
   themeConfig: {
-    logo: '/canvas-party.svg',
+    logo: { dark: '/icon-dark.svg', light: '/icon-light.svg' },
     nav: [
       {
         text: 'Guide',

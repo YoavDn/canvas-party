@@ -38,7 +38,7 @@ canvasWrapper.appendChild(canvasParty.canvas)
 
 ## Template customization:
 
-Currently **only** the `confetti` template have customization options, putting a options attribute on other
+Currently **only** the `confetti` template have customization options, putting a options attributes on other
 templates **will not work**
 
 ```ts
@@ -54,7 +54,40 @@ Example of custom confetti canvas:
 ```js
 const myCustomCanvas = useCanvasParty(canvasWrapper, {
   type: 'confetti',
-  colors: ['#A3F7B5', '#DE3C4B', '#87F5FB'],
+  colors: ['#A3F7B5', '#EB5160', '#B0F2B4'],
   count: 450,
 })
 ```
+
+### **Result**
+
+<script>
+  import {shallowRef, onMounted} from 'vue'
+export default {
+  setup () {
+    const dynamicComponent = shallowRef(null) 
+    onMounted(() => {
+      import('@canvas-party/vue').then((module) => {
+        dynamicComponent.value = module.default
+        console.log(this.dynamicComponent)
+        })
+
+    })
+
+    return {
+      dynamicComponent
+    }
+  }
+  
+}
+</script>
+
+<component
+   class="canvas-example" 
+    v-if="dynamicComponent"
+    :is="dynamicComponent"
+    :type="'confetti'"
+    :options="{colors: ['#A3F7B5', '#EB5160', '#B0F2B4'], count: 400}"
+    >
+
+  </component>
