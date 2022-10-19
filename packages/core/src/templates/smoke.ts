@@ -2,8 +2,8 @@ export function useSmoke(c: CanvasRenderingContext2D, canvas: HTMLCanvasElement)
   let myReq: number
   const requestAnimationFrame = window.requestAnimationFrame
 
-  var w = (canvas.width = window.innerWidth)
-  var h = (canvas.height = window.innerHeight)
+  var w = canvas.width
+  var h = canvas.height
   const particles: any = {}
   let particleIndex = 0
   const maxParticles = 40
@@ -12,8 +12,8 @@ export function useSmoke(c: CanvasRenderingContext2D, canvas: HTMLCanvasElement)
   let mouseY: number | null
 
   function resizeCanvas() {
-    w = canvas.width = window.innerWidth
-    h = canvas.height = window.innerHeight
+    w = canvas.width
+    h = canvas.height
   }
 
   // function Particle() {
@@ -45,8 +45,8 @@ export function useSmoke(c: CanvasRenderingContext2D, canvas: HTMLCanvasElement)
 
     constructor() {
       this.x = mouseX || w / 2
-      this.y = mouseY || h / 3
-      this.size = this.random(0, 50)
+      this.y = mouseY || h / 2
+      this.size = this.random(0, 40)
       this.color = 'hsla(' + hue + ', 100%, 50%, .01)'
       this.maxLife = this.random(0, 200)
       this.life = 0
@@ -75,8 +75,6 @@ export function useSmoke(c: CanvasRenderingContext2D, canvas: HTMLCanvasElement)
     }
 
     random(min: number, max: number) {
-      // min = Math.ceil(min)
-      // max = Math.floor(max)
       return Math.random() * (max - min + 1) + min
     }
   }
