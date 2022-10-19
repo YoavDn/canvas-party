@@ -47,6 +47,7 @@ export default {
           { text: 'Fluid', link: '/templates/fluid' },
           { text: 'Underground', link: '/templates/underground' },
           { text: 'Gradient', link: '/templates/gradient' },
+          { text: 'Smoke', link: '/templates/smoke' },
         ],
       },
     ],

@@ -37,6 +37,10 @@ export default {
         type:'fluid',
         title: 'Fluid'
       },
+       {
+        type:'smoke',
+        title: 'Smoke'
+      },
       ]
         onMounted(() => {
         import('@canvas-party/vue').then((module) => {
