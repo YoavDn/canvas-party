@@ -1,8 +1,8 @@
-import { useEffect, useRef } from 'react'
-import _ from 'lodash'
-import React from 'react'
-import { useCanvasParty } from '../../../core/lib'
-import { TTemplates } from '../../../core/src/types'
+import { useEffect, useRef } from "react"
+import _ from "lodash"
+import React from "react"
+import { useCanvasParty } from "../../../core/lib"
+import { TTemplates } from "../../../core/src/types"
 
 interface ICanvasPartyProps {
   colors?: string[]
@@ -16,21 +16,22 @@ type TProps = {
 
 const CanvasParty: React.FunctionComponent<TProps> = ({ options, type }) => {
   const canvasWrapperRef = useRef<any>()
-  const uniqId = _.uniqueId('canvas_')
+  const uniqId = _.uniqueId("canvas_")
+  let canvasParty: any = null
 
   useEffect(() => {
     if (!canvasWrapperRef.current) return
-    const cp = useCanvasParty(canvasWrapperRef.current, {
+
+    if (canvasWrapperRef.current) {
+      canvasWrapperRef.current.innerHTML = null
+    }
+    canvasParty = useCanvasParty(canvasWrapperRef.current, {
       type,
       ...options,
     })
-    if (canvasWrapperRef.current.hasChildNodes()) {
-      canvasWrapperRef.current.innerHTML = null
-    }
-    canvasWrapperRef.current.appendChild(cp.canvas)
-    cp.setCanvasParty(type)
+    canvasWrapperRef.current.appendChild(canvasParty.canvas)
 
-    return () => cp.removeCanvas()
+    return () => canvasParty.removeCanvas()
   }, [type, options])
 
   return (
