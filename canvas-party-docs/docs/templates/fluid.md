@@ -36,18 +36,7 @@ export default {
       dynamicComponent
     }
   }
-  // data() {
-  //   return {
-  //     dynamicComponent: null
-  //   }
-  // },
-
-  // mounted() {
-  //   import('@canvas-party/vue').then((module) => {
-  //     this.dynamicComponent = module.default
-  //     console.log(this.dynamicComponent)
-  //   })
-  // }
+  
 }
 </script>
 

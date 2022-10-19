@@ -29,10 +29,10 @@ then use the `useCanvasParty` function with the "type" of the desired [template]
 The final step is to append the canvas element to the wrapper.
 
 ```js
-import { useCanvasParty } from 'canvas-party'
+import { useCanvasParty } from "canvas-party"
 
-const canvasWrapper = document.querySelector('.canvas-wrapper')
-const canvasParty = useCanvasParty(canvasWrapper, { type: 'confetti' })
+const canvasWrapper = document.querySelector(".canvas-wrapper")
+const canvasParty = useCanvasParty(canvasWrapper, { type: "confetti" })
 
 canvasWrapper.appendChild(canvasParty.canvas)
 ```
@@ -54,8 +54,8 @@ Example of custom confetti canvas:
 
 ```js
 const myCustomCanvas = useCanvasParty(canvasWrapper, {
-  type: 'confetti',
-  colors: ['#A3F7B5', '#DE3C4B', '#87F5FB'],
+  type: "confetti",
+  colors: ["#A3F7B5", "#DE3C4B", "#87F5FB"],
   count: 450,
 })
 ```
