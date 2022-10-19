@@ -1017,7 +1017,7 @@ export function useFluid(gl, canvas) {
     applyInputs();
     if (!config.PAUSED) step(dt);
     render(null);
-    requestAnimationFrame(update);
+    myReq = requestAnimationFrame(update);
   }
 
   myReq = requestAnimationFrame(update);
