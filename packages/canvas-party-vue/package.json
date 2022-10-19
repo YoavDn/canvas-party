@@ -1,6 +1,6 @@
 {
   "name": "@canvas-party/vue",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "main": "./dist/canvas-party-vue.umd.js",
   "module": "./dist/canvas-party-vue.es.js",
   "exports": {

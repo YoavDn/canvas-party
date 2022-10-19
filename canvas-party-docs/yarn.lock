@@ -130,10 +130,10 @@
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.19.4.tgz#03c4339d2b8971eb3beca5252bafd9b9f79db3dc"
   integrity sha512-qpVT7gtuOLjWeDTKLkJ6sryqLliBaFpAtGeqw5cs5giLldvh+Ch0plqnUMKoVAUS6ZEueQQiZV+p5pxtPitEsA==
 
-"@canvas-party/vue@^0.0.10":
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/@canvas-party/vue/-/vue-0.0.10.tgz#8d5dda36d8d7f7fc0dde7882e05ce343f8317c7d"
-  integrity sha512-yOXG+c4PHUG8uO3vBFW6iZSfwFkBqUZLcfrVouSE0Dmw27lWCMOirLhfxyb+GI3EnV0ynaoWyeWps5+dZq6lEg==
+"@canvas-party/vue@^0.0.11":
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/@canvas-party/vue/-/vue-0.0.11.tgz#30c7c870d61bfc82033290918ebbf25d81e81f89"
+  integrity sha512-EQQQBLnMLQNTv7pNWnkYlHFHpmf9sAIuRNscyvV1vhh0HuZ/J1KJcMJyKlxb7E3weEIU1N0Qxp1sB6oDO/dqYg==
   dependencies:
     vue "^3.2.37"
 
