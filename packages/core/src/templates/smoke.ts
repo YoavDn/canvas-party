@@ -94,9 +94,7 @@ export function useSmoke(c: CanvasRenderingContext2D, canvas: HTMLCanvasElement)
     myReq = requestAnimationFrame(animate)
   }
 
-  window.addEventListener('resize', function () {
-    resizeCanvas()
-  })
+  window.addEventListener('resize', resizeCanvas)
 
   canvas.addEventListener('mousemove', function (e) {
     mouseX = e.offsetX
@@ -112,6 +110,7 @@ export function useSmoke(c: CanvasRenderingContext2D, canvas: HTMLCanvasElement)
 
   function stop() {
     window.cancelAnimationFrame(myReq)
+    window.removeEventListener('resize', resizeCanvas)
   }
 
   return {
