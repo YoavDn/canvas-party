@@ -1,5 +1,8 @@
 # Fluid
 
+The fluid template unlike other templates work with WebGL and does not support reactivity features.
+It also activated `only on hover`, keep this in mind when developing on mobile.
+
 ### Example of Fluid canvas with react
 
 ```jsx
@@ -41,3 +44,7 @@ export default {
     >
 
   </component>
+
+::: warning
+This template does have reactivity features, meaning that interactive switching of the template type **will not work**
+:::
