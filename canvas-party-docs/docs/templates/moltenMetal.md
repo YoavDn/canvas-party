@@ -1,13 +1,13 @@
-# Trippy
+# Molten metal
 
-### Example of trippy canvas with react
+### Example of Molten metal canvas with react
 
 ```jsx
 import { useState } from 'react'
 import CanvasParty from '@canvas-party/react'
 
 function reactApp() {
-  const [canvasType, setCanvasType] = useState('trippy')
+  const [canvasType, setCanvasType] = useState('moltenMetal')
 
   return <CanvasParty type={canvasType} />
 }
@@ -42,7 +42,7 @@ export default {
    class="canvas-example" 
     v-if="dynamicComponent"
     :is="dynamicComponent"
-    :type="'trippy'"
+    :type="'moltenMetal'"
     >
 
   </component>

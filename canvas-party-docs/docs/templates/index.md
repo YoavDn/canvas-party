@@ -41,6 +41,10 @@ export default {
         type:'smoke',
         title: 'Smoke'
       },
+      {
+        type:'moltenMetal',
+        title: 'Molten Metal'
+      },
       ]
         onMounted(() => {
         import('@canvas-party/vue').then((module) => {

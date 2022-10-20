@@ -48,6 +48,7 @@ export default {
           { text: 'Underground', link: '/templates/underground' },
           { text: 'Gradient', link: '/templates/gradient' },
           { text: 'Smoke', link: '/templates/smoke' },
+          { text: 'Molten Metal', link: '/templates/moltenMetal' },
         ],
       },
     ],

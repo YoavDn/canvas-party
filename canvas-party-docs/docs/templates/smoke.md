@@ -45,7 +45,3 @@ export default {
     >
 
   </component>
-
-::: warning
-This template does have reactivity features, meaning that interactive switching of the template type **will not work**
-:::

@@ -17,6 +17,8 @@
 
 .template-card h2 {
   position: absolute;
+  text-align: center;
+  line-height: 1.2em;
   color: white !important;
   top: 50%;
   left: 50%;
