@@ -5,10 +5,12 @@ import { useTvSnow } from './tvSnow'
 import { useUnderground } from './underground'
 import { useGradient } from './gradient'
 import { useFluid } from './fluid.js'
-import { useSmoke } from './smoke.js'
+import { useSmoke } from './smoke'
+import { useMoltenMetal } from './moltenMetal'
 
 export const templates = {
   confetti: useConfetti,
+  moltenMetal: useMoltenMetal,
   tvSnow: useTvSnow,
   smoke: useSmoke,
   trippy: useTrippy,
