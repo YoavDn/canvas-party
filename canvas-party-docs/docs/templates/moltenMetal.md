@@ -11,7 +11,6 @@ function reactApp() {
 
   return <CanvasParty type={canvasType} />
 }
-
 export default reactApp
 ```
 
