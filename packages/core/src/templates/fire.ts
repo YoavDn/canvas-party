@@ -10,8 +10,9 @@ export function useFire(c: CanvasRenderingContext2D, canvas: HTMLCanvasElement) 
   let n: Ip[] = []
   let m = Math.random
   let f = Math.floor
+  let myReq: number
 
-  A()
+  myReq = window.requestAnimationFrame(A)
 
   function A() {
     c.globalCompositeOperation = 'source-over'
@@ -55,7 +56,8 @@ export function useFire(c: CanvasRenderingContext2D, canvas: HTMLCanvasElement) 
       c.fill()
     }
 
-    window.requestAnimationFrame(A)
+    myReq = window.requestAnimationFrame(A)
+
     c.font = '4.5em Permanent Marker'
     c.fillStyle = 'hsla(11, 95%, 15%,1)'
   }
@@ -73,4 +75,12 @@ export function useFire(c: CanvasRenderingContext2D, canvas: HTMLCanvasElement) 
     msX = e.touches[0].pageX
     msY = e.touches[0].pageY
   })
+
+  function stop() {
+    window.cancelAnimationFrame(myReq)
+  }
+
+  return {
+    stop,
+  }
 }
