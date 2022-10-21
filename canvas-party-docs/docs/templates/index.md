@@ -45,6 +45,10 @@ export default {
         type:'moltenMetal',
         title: 'Molten Metal'
       },
+      {
+        type:'fire',
+        title: 'Fire'
+      },
       ]
         onMounted(() => {
         import('@canvas-party/vue').then((module) => {

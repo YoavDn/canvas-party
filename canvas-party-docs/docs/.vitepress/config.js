@@ -49,6 +49,7 @@ export default {
           { text: 'Gradient', link: '/templates/gradient' },
           { text: 'Smoke', link: '/templates/smoke' },
           { text: 'Molten Metal', link: '/templates/moltenMetal' },
+          { text: 'Fire', link: '/templates/fire' },
         ],
       },
     ],
