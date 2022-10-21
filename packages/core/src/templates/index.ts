@@ -7,9 +7,11 @@ import { useGradient } from './gradient'
 import { useFluid } from './fluid.js'
 import { useSmoke } from './smoke'
 import { useMoltenMetal } from './moltenMetal'
+import { useFire } from './fire'
 
 export const templates = {
   confetti: useConfetti,
+  fire: useFire,
   moltenMetal: useMoltenMetal,
   tvSnow: useTvSnow,
   smoke: useSmoke,
