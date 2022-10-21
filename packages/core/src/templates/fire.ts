@@ -3,10 +3,10 @@ export function useFire(c: CanvasRenderingContext2D, canvas: HTMLCanvasElement) 
     [key: string]: number
   }
 
-  let w = (canvas.width = window.innerWidth)
-  let h = (canvas.height = window.innerHeight)
-  let msX = w / 2,
-    msY = h / 2
+  let w = canvas.width
+  let h = canvas.height
+  let msX = w / 2
+  let msY = h / 2
   let n: Ip[] = []
   let m = Math.random
   let f = Math.floor
@@ -66,14 +66,14 @@ export function useFire(c: CanvasRenderingContext2D, canvas: HTMLCanvasElement) 
     canvas.width = w = window.innerWidth
     canvas.height = h = window.innerHeight
   })
-  document.body.addEventListener('mousemove', function (e) {
-    msX = e.clientX
-    msY = e.clientY
+  canvas.addEventListener('mousemove', function (e) {
+    msX = e.offsetX
+    msY = e.offsetY
   })
-  document.body.addEventListener('touchmove', function (e) {
+  canvas.addEventListener('touchmove', function (e) {
     e.preventDefault()
-    msX = e.touches[0].pageX
-    msY = e.touches[0].pageY
+    msX = e.touches[0].clientX
+    msY = e.touches[0].clientY
   })
 
   function stop() {
