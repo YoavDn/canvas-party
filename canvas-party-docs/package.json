@@ -13,7 +13,7 @@
   "devDependencies": {
     "@canvas-party/vue": "^0.0.14",
     "sass": "^1.55.0",
-    "vitepress": "^1.0.0-alpha.21",
+    "vitepress": "^1.0.0-alpha.22",
     "vue": "^3.2.40"
   }
 }

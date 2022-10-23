@@ -2,6 +2,8 @@ export default {
   title: 'CanvasParty',
   description: 'HTML canvas animations library.',
 
+  head: [['link', { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]],
+
   themeConfig: {
     logo: { dark: '/icon-dark.svg', light: '/icon-light.svg' },
     nav: [
