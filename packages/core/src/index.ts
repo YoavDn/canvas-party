@@ -24,12 +24,14 @@ export function useCanvasParty(el: HTMLElement, options: IOptionsType) {
   canvas.width = elRect.width
 
   //template chooser
-  const { colors, count } = options
+  const { colors, count, color } = options
   let template: any
 
   function drawTemplate() {
     if (type === 'confetti') {
       template = templates[type](c! as CanvasRenderingContext2D, canvas, colors, count)
+    } else if (type === 'flow') {
+      template = templates[type](c! as CanvasRenderingContext2D, canvas, color)
     } else if (type === 'fluid') {
       template = templates[type](c! as WebGL2RenderingContext, canvas)
     } else {
