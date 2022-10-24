@@ -1,6 +1,6 @@
 {
   "name": "canvas-party",
-  "version": "1.0.0-alpha.08",
+  "version": "1.0.0-alpha.09",
   "description": "",
   "type": "module",
   "main": "lib/index.js",

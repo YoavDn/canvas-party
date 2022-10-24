@@ -15,5 +15,5 @@ export interface IOptionsType {
   type: TTemplates
   count?: number
   colors?: string[]
-  color: string
+  color?: string
 }

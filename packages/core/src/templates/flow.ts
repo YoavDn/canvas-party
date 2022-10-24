@@ -50,7 +50,7 @@ export function useFlow(
   }
 
   c.fillStyle = 'hsla(0, 0%, 0%, .04)'
-  c.strokeStyle = 'hsla(218, 95%, 5%, 1)'
+  c.strokeStyle = color
 
   let myReq: number
 
