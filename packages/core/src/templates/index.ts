@@ -8,12 +8,10 @@ import { useFluid } from './fluid.js'
 import { useSmoke } from './smoke'
 import { useMoltenMetal } from './moltenMetal'
 import { useFire } from './fire'
-import { useFlow } from './flow'
 
 export const templates = {
   confetti: useConfetti,
   fire: useFire,
-  flow: useFlow,
   moltenMetal: useMoltenMetal,
   tvSnow: useTvSnow,
   smoke: useSmoke,
