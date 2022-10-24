@@ -44,6 +44,7 @@ export default {
         items: [
           { text: 'Confetti', link: '/templates/confetti' },
           { text: 'Trippy', link: '/templates/trippy' },
+          { text: 'Flow', link: '/templates/flow' },
           { text: 'Starfield', link: '/templates/starfield' },
           { text: 'TV snow', link: '/templates/tvSnow' },
           { text: 'Fluid', link: '/templates/fluid' },
