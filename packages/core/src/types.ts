@@ -9,7 +9,6 @@ export type TTemplates =
   | 'smoke'
   | 'moltenMetal'
   | 'fire'
-  | 'flow'
 
 export interface IOptionsType {
   type: TTemplates

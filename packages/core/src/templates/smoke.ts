@@ -15,22 +15,6 @@ export function useSmoke(c: CanvasRenderingContext2D, canvas: HTMLCanvasElement)
     w = canvas.width
     h = canvas.height
   }
-
-  // function Particle() {
-  //   this.x = mouseX || w / 2;
-  //   this.y = mouseY || h / 3;
-  //   this.size = this.random(50);
-  //   this.color = 'hsla(' + hue + ', 100%, 50%, .01)';
-  //   this.maxLife = this.random(200);
-  //   this.life = 0;
-  //   this.vx = this.random(-5, 5);
-  //   this.vy = this.random(-3, 3);
-  //   this.grav = 0.003;
-  //   this.index = particleIndex;
-  //   particles[particleIndex] = this;
-  //   particleIndex++;
-  // }
-
   class Particle {
     x: number
     y: number

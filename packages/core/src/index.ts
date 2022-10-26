@@ -30,8 +30,6 @@ export function useCanvasParty(el: HTMLElement, options: IOptionsType) {
   function drawTemplate() {
     if (type === 'confetti') {
       template = templates[type](c! as CanvasRenderingContext2D, canvas, colors, count)
-    } else if (type === 'flow') {
-      template = templates[type](c! as CanvasRenderingContext2D, canvas, color)
     } else if (type === 'fluid') {
       template = templates[type](c! as WebGL2RenderingContext, canvas)
     } else {
@@ -51,6 +49,10 @@ export function useCanvasParty(el: HTMLElement, options: IOptionsType) {
       }
 
       type = newType
+
+      elRect = el.getBoundingClientRect()
+      canvas.height = elRect.height
+      canvas.width = elRect.width
       drawTemplate()
     } else {
       console.error('Invalid canvasParty template name')
