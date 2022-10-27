@@ -10,8 +10,11 @@ export type TTemplates =
   | 'moltenMetal'
   | 'fire'
 
-export interface IOptionsType {
+export interface ICanvasSettings {
   type: TTemplates
+  options: IOptionsType
+}
+export interface IOptionsType {
   count?: number
   colors?: string[]
   color?: string

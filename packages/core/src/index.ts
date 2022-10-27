@@ -1,5 +1,5 @@
 import { templates } from './templates/index.js'
-import { IOptionsType, TTemplates } from './types'
+import { ICanvasSettings, IOptionsType, TTemplates } from './types'
 
 const webglParams = {
   alpha: true,
@@ -9,12 +9,12 @@ const webglParams = {
   preserveDrawingBuffer: false,
 }
 
-export function useCanvasParty(el: HTMLElement, options: IOptionsType) {
-  let type: TTemplates = options.type
+export function useCanvasParty(el: HTMLElement, canvasOptions: ICanvasSettings) {
+  let { type, options } = canvasOptions
 
   let canvas = document.createElement('canvas')
 
-  let c = options.type === 'fluid' ? canvas.getContext('webgl2', webglParams) : canvas.getContext('2d')
+  let c = type === 'fluid' ? canvas.getContext('webgl2', webglParams) : canvas.getContext('2d')
 
   canvas.style.width = '100%'
   canvas.style.height = '100%'
@@ -24,7 +24,6 @@ export function useCanvasParty(el: HTMLElement, options: IOptionsType) {
   canvas.width = elRect.width
 
   //template chooser
-  const { colors, count, color } = options
   let template: any
 
   function drawTemplate() {
@@ -38,7 +37,7 @@ export function useCanvasParty(el: HTMLElement, options: IOptionsType) {
   }
   drawTemplate()
 
-  function setCanvasParty(newType: TTemplates) {
+  function setCanvasParty(newType: TTemplates, NewOptions?: IOptionsType) {
     if (Object.keys(templates).includes(type)) {
       template.stop()
 
@@ -49,7 +48,7 @@ export function useCanvasParty(el: HTMLElement, options: IOptionsType) {
       }
 
       type = newType
-
+      if (NewOptions) options = NewOptions
       elRect = el.getBoundingClientRect()
       canvas.height = elRect.height
       canvas.width = elRect.width

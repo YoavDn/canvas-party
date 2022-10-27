@@ -1,36 +1,36 @@
 <script setup lang="ts">
-import { defineProps, ref, watch, onMounted, onUnmounted } from 'vue'
-import _ from 'lodash'
+import { defineProps, ref, watch, onMounted, onUnmounted } from "vue"
+import _ from "lodash"
 // import { useCanvasParty } from '../../../core/lib'
-import { useCanvasParty } from '../../../core/lib'
-import { templates } from '../../../core/src/templates/index'
-import type { TTemplates } from '../../../core/src/types'
+import { useCanvasParty } from "../../../core/lib"
+import { templates } from "../../../core/src/templates/index"
+import type { TTemplates } from "../../../core/src/types"
 
 const props = defineProps<{
   type: TTemplates
   options?: { colors?: string[]; count?: number }
 }>()
 
-const uniqId = _.uniqueId('canvas_')
+const uniqId = _.uniqueId("canvas_")
 const canvasParty = ref<any>(null)
 
 onMounted(() => {
   const wrapper = document.getElementById(uniqId) as HTMLDivElement
   canvasParty.value = useCanvasParty(wrapper, {
     type: props.type,
-    ...props.options,
+    options: { ...props.options },
   })
   wrapper.appendChild(canvasParty.value.canvas)
 })
 
 watch(
-  () => props.type,
-  type => {
-    if (Object.keys(templates).includes(type)) {
+  () => props,
+  props => {
+    if (Object.keys(templates).includes(props.type)) {
       canvasParty.value.removeCanvas()
-      canvasParty.value.setCanvasParty(type)
+      canvasParty.value.setCanvasParty(props.type, props.options)
     } else {
-      console.error('Invalid canvasParty template name')
+      console.error("Invalid canvasParty template name")
     }
   }
 )

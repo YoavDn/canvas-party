@@ -17,10 +17,11 @@ export default reactApp
 ### **Result**
 
 <script>
-  import {shallowRef, onMounted} from 'vue'
+  import {shallowRef, onMounted, ref} from 'vue'
 export default {
   setup () {
-    const dynamicComponent = shallowRef(null) 
+    const isAzula = ref(true)
+    const dynamicComponent = shallowRef(false) 
     onMounted(() => {
       import('@canvas-party/vue').then((module) => {
         dynamicComponent.value = module.default
@@ -29,7 +30,14 @@ export default {
 
     })
 
+  const setAzula = () => {
+    console.log('hi')
+    isAzula.value = true
+  }
+
     return {
+      setAzula,
+      isAzula,
       dynamicComponent
     }
   }
@@ -37,11 +45,13 @@ export default {
 }
 </script>
 
+<button @click="setAzula">Azula</button>
 <component
    class="canvas-example" 
     v-if="dynamicComponent"
     :is="dynamicComponent"
     :type="'fire'"
+    :options="{azula: isAzula}"
     >
 
   </component>
