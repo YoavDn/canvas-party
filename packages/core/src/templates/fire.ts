@@ -1,4 +1,5 @@
-export function useFire(c: CanvasRenderingContext2D, canvas: HTMLCanvasElement) {
+import { IOptionsType } from '../types'
+export function useFire(c: CanvasRenderingContext2D, canvas: HTMLCanvasElement, options?: IOptionsType) {
   interface Ip {
     [key: string]: number
   }
@@ -16,7 +17,8 @@ export function useFire(c: CanvasRenderingContext2D, canvas: HTMLCanvasElement) 
 
   function A() {
     c.globalCompositeOperation = 'source-over'
-    c.fillStyle = 'hsla(11, 95%, 15%, 1)'
+    c.fillStyle = options?.azula ? '#001233' : 'hsla(11, 95%, 15%, 1)'
+
     c.fillRect(0, 0, w, h)
     c.globalCompositeOperation = 'lighter'
 
@@ -27,9 +29,9 @@ export function useFire(c: CanvasRenderingContext2D, canvas: HTMLCanvasElement) 
       p.vx = m() * 40 - 5
       p.vy = m() * 40 - 7
       p.s = m() * 70 + 5
-      p.r = f(m() * 205 + 10)
-      p.g = f(0.5 * m() * 95)
-      p.b = f(0.5 * m() * 45)
+      p.r = options?.azula ? f(0.5 * m() + 20) : f(m() * 205 + 10)
+      p.g = options?.azula ? f(0.5 * m() + 40) : f(0.5 * m() * 95)
+      p.b = options?.azula ? f(m() * 245 + 10) : f(0.5 * m() * 45)
       p.dx = msX
       n.push(p)
     }

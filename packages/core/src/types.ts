@@ -15,4 +15,5 @@ export interface IOptionsType {
   count?: number
   colors?: string[]
   color?: string
+  azula?: boolean
 }

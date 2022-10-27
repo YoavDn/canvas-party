@@ -28,8 +28,8 @@ export function useCanvasParty(el: HTMLElement, options: IOptionsType) {
   let template: any
 
   function drawTemplate() {
-    if (type === 'confetti') {
-      template = templates[type](c! as CanvasRenderingContext2D, canvas, colors, count)
+    if (type === 'confetti' || type === 'fire') {
+      template = templates[type](c! as CanvasRenderingContext2D, canvas, options)
     } else if (type === 'fluid') {
       template = templates[type](c! as WebGL2RenderingContext, canvas)
     } else {
