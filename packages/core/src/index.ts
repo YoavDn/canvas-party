@@ -28,7 +28,7 @@ export function useCanvasParty(el: HTMLElement, canvasOptions: ICanvasSettings) 
 
   function drawTemplate() {
     if (type === 'confetti' || type === 'fire') {
-      template = templates[type](c! as CanvasRenderingContext2D, canvas, options)
+      template = templates[type](c! as CanvasRenderingContext2D, canvas, options!)
     } else if (type === 'fluid') {
       template = templates[type](c! as WebGL2RenderingContext, canvas)
     } else {

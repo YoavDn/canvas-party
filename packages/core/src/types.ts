@@ -12,7 +12,7 @@ export type TTemplates =
 
 export interface ICanvasSettings {
   type: TTemplates
-  options: IOptionsType
+  options?: IOptionsType
 }
 export interface IOptionsType {
   count?: number

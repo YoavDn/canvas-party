@@ -27,7 +27,7 @@ const CanvasParty: React.FunctionComponent<TProps> = ({ options, type }) => {
     }
     canvasParty = useCanvasParty(canvasWrapperRef.current, {
       type,
-      ...options,
+      options: { ...options },
     })
     canvasWrapperRef.current.appendChild(canvasParty.canvas)
 

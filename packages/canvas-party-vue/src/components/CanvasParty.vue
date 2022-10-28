@@ -1,5 +1,12 @@
 <script setup lang="ts">
-import { defineProps, ref, watch, onMounted, onUnmounted } from "vue"
+import {
+  defineProps,
+  ref,
+  watch,
+  onMounted,
+  onUnmounted,
+  watchEffect,
+} from "vue"
 import _ from "lodash"
 // import { useCanvasParty } from '../../../core/lib'
 import { useCanvasParty } from "../../../core/lib"
@@ -32,7 +39,8 @@ watch(
     } else {
       console.error("Invalid canvasParty template name")
     }
-  }
+  },
+  { deep: true }
 )
 
 onUnmounted(() => {

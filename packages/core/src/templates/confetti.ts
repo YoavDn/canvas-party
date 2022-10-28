@@ -3,11 +3,11 @@ const NUM_CONFETTI = 350
 const COLORS = ['#ff579fd9', '#bbdfc5d9', '#bab700d9', '#60935dd9', '#f8b646d9']
 const PI_2 = 2 * Math.PI
 
-export function useConfetti(c: CanvasRenderingContext2D, canvas: HTMLCanvasElement, options: IOptionsType) {
+export function useConfetti(c: CanvasRenderingContext2D, canvas: HTMLCanvasElement, options?: IOptionsType) {
   let h: number
   let w: number
-  const confettiCount = options.count || NUM_CONFETTI
-  const colors = options.colors || COLORS
+  const confettiCount = options?.count || NUM_CONFETTI
+  const colors = options?.colors || COLORS
 
   const cofetties: Confeti[] = []
   for (let i = 0; i < confettiCount; i++) {
