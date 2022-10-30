@@ -22,7 +22,6 @@ export default {
 </script>
 
   <div ref="wrapper" class="bg-wrapper">
-  <!-- <CanvasParty class="index-canvas" :type="'confetti'"/> -->
    <component
    class="index-canvas" 
     v-if="dynamicComponent"
