@@ -31,7 +31,7 @@ const CanvasParty: React.FunctionComponent<TProps> = ({ options, type }) => {
     })
     canvasWrapperRef.current.appendChild(canvasParty.canvas)
 
-    return () => canvasParty.removeCanvas()
+    return () => canvasParty.remove()
   }, [type, options])
 
   return (
