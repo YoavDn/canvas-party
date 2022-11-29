@@ -11,7 +11,9 @@ const webglParams = {
 
 export function useCanvasParty(el: HTMLElement, canvasOptions: ICanvasSettings) {
     let { type, options } = canvasOptions
+
     let canvas = document.createElement('canvas')
+
     let c = type === 'fluid' ? canvas.getContext('webgl2', webglParams) : canvas.getContext('2d')
 
     canvas.style.width = '100%'
@@ -25,17 +27,17 @@ export function useCanvasParty(el: HTMLElement, canvasOptions: ICanvasSettings) 
     let template: any
 
     function drawTemplate() {
-        if (type === 'confetti' || type === 'fire') { // when has options
+        if (type === 'confetti' || type === 'fire') {
             template = templates[type](c! as CanvasRenderingContext2D, canvas, options!)
-        } else if (type === 'fluid') { // when canvas is WebGL
+        } else if (type === 'fluid') {
             template = templates[type](c! as WebGL2RenderingContext, canvas)
-        } else { // when no options
+        } else {
             template = templates[type](c! as CanvasRenderingContext2D, canvas)
         }
     }
     drawTemplate()
 
-    function setCanvasParty(newType: TTemplates, NewOptions?: IOptionsType) {
+    function set(newType: TTemplates, NewOptions?: IOptionsType) {
         if (Object.keys(templates).includes(type)) {
             template.stop()
 
@@ -56,14 +58,14 @@ export function useCanvasParty(el: HTMLElement, canvasOptions: ICanvasSettings) 
         }
     }
 
-    function removeCanvas() {
+    function remove() {
         template.stop()
     }
 
     window.requestAnimationFrame
     return {
-        setCanvasParty,
+        set,
         canvas,
-        removeCanvas,
+        remove,
     }
 }

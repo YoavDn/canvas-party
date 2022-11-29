@@ -5,9 +5,9 @@ import {
     watch,
     onMounted,
     onUnmounted,
-    watchEffect,
 } from "vue"
 import _ from "lodash"
+// import { useCanvasParty } from '../../../core/lib'
 import { useCanvasParty } from "../../../core/lib"
 import { templates } from "../../../core/src/templates/index"
 import type { TTemplates } from "../../../core/src/types"
@@ -33,8 +33,8 @@ watch(
     () => props,
     props => {
         if (Object.keys(templates).includes(props.type)) {
-            canvasParty.value.removeCanvas()
-            canvasParty.value.setCanvasParty(props.type, props.options)
+            canvasParty.value.remove()
+            canvasParty.value.set(props.type, props.options)
         } else {
             console.error("Invalid canvasParty template name")
         }
@@ -43,7 +43,7 @@ watch(
 )
 
 onUnmounted(() => {
-    canvasParty.value.removeCanvas()
+    canvasParty.value.remove()
 })
 </script>
 
