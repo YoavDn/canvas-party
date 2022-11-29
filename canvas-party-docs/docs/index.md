@@ -38,6 +38,7 @@ export default {
 
 <div class="actions-btns">
 <a class="get-started" href="/guide/getting-started">Get Started</a>
+<!-- <a class="get-started" href="/guide/getting-started">Get Started</a> -->
 <a class="view-templates" href="/templates/index">View templates</a>
 </div>
   </div>

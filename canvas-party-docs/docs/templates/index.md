@@ -35,7 +35,7 @@ export default {
       },
        {
         type:'fluid',
-        title: 'Fluid'
+        title: 'Fluid',
       },
        {
         type:'smoke',
@@ -69,13 +69,14 @@ export default {
  <div class="templates-container">
     <div class="template-card" v-for="template in templates">
     <a :href="`/templates/${template.type}`">
-    <component
+    <!-- <img class="canvas-card" :src="template.gif"/> -->
+     <component
      class="canvas-card"  
      v-if="dynamicComponent"
      :is="dynamicComponent"
      :type="template.type"
-    >
-  </component>
+    > 
+  </component> 
   </a>
         <h2>{{template.title}}</h2>
      </div>
