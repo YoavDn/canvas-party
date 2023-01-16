@@ -1,71 +1,100 @@
 import { templates } from './templates/index.js'
-import { ICanvasSettings, IOptionsType, TTemplates } from './types'
+import { TTemplates } from './types'
+
+const isClinet = typeof window !== 'undefined'
+const efaultWindow = isClinet ? window : undefined
 
 const webglParams = {
-    alpha: true,
-    depth: false,
-    stencil: false,
-    antialias: false,
-    preserveDrawingBuffer: false,
+   alpha: true,
+   depth: false,
+   stencil: false,
+   antialias: false,
+   preserveDrawingBuffer: false,
 }
 
-export function useCanvasParty(el: HTMLElement, canvasOptions: ICanvasSettings) {
-    let { type, options } = canvasOptions
+export interface IOptionsType {
+   count?: number
+   colors?: string[]
+   color?: string
+   azula?: boolean
+}
 
-    let canvas = document.createElement('canvas')
+export interface ICanvasSettings {
+   type: TTemplates
+   options?: IOptionsType
 
-    let c = type === 'fluid' ? canvas.getContext('webgl2', webglParams) : canvas.getContext('2d')
+   /**  
+     * Set the Canvas options and type of template
+     * @see  
+     * @param wrapper
+     * @param options
+    
+    */
+}
 
-    canvas.style.width = '100%'
-    canvas.style.height = '100%'
-    let elRect = el.getBoundingClientRect()
+export function useCanvasParty(wrapper: Element, canvasOptions: ICanvasSettings) {
+   let { type, options } = canvasOptions
 
-    canvas.height = elRect.height
-    canvas.width = elRect.width
+   if (!document) return
 
-    //template chooser
-    let template: any
+   if (wrapper && !('getBoundingClientRect' in wrapper)) {
+      console.error("Wrapper element is not valid, please make sure that the 'wrapper' is an 'Element' type")
+      return
+   }
 
-    function drawTemplate() {
-        if (type === 'confetti' || type === 'fire') {
-            template = templates[type](c! as CanvasRenderingContext2D, canvas, options!)
-        } else if (type === 'fluid') {
-            template = templates[type](c! as WebGL2RenderingContext, canvas)
-        } else {
-            template = templates[type](c! as CanvasRenderingContext2D, canvas)
-        }
-    }
-    drawTemplate()
+   let canvas = document.createElement('canvas')
+   let c = type === 'fluid' ? canvas.getContext('webgl2', webglParams) : canvas.getContext('2d')
 
-    function set(newType: TTemplates, NewOptions?: IOptionsType) {
-        if (Object.keys(templates).includes(type)) {
-            template.stop()
+   canvas.style.width = '100%'
+   canvas.style.height = '100%'
+   let elRect = wrapper.getBoundingClientRect()
 
-            if (type === 'fluid') {
-                canvas = document.createElement('canvas')
-                c = canvas.getContext('2d')
-                console.log(c)
-            }
+   canvas.height = elRect.height
+   canvas.width = elRect.width
 
-            type = newType
-            if (NewOptions) options = NewOptions
-            elRect = el.getBoundingClientRect()
-            canvas.height = elRect.height
-            canvas.width = elRect.width
-            drawTemplate()
-        } else {
-            console.error('Invalid canvasParty template name')
-        }
-    }
+   //template chooser
+   let template: any
 
-    function remove() {
-        template.stop()
-    }
+   function drawTemplate() {
+      if (type === 'confetti' || type === 'fire') {
+         template = templates[type](c as CanvasRenderingContext2D, canvas, options)
+      } else if (type === 'fluid') {
+         template = templates[type](c as WebGL2RenderingContext, canvas)
+      } else {
+         template = templates[type](c as CanvasRenderingContext2D, canvas)
+      }
+   }
+   drawTemplate()
 
-    window.requestAnimationFrame
-    return {
-        set,
-        canvas,
-        remove,
-    }
+   function set(newType: TTemplates, NewOptions?: IOptionsType) {
+      if (Object.keys(templates).includes(type)) {
+         template.stop()
+
+         if (type === 'fluid') {
+            canvas = document.createElement('canvas')
+            c = canvas.getContext('2d')
+            console.log(c)
+         }
+
+         type = newType
+         if (NewOptions) options = NewOptions
+         elRect = el.getBoundingClientRect()
+         canvas.height = elRect.height
+         canvas.width = elRect.width
+         drawTemplate()
+      } else {
+         console.error('Invalid canvasParty template name')
+      }
+   }
+
+   function remove() {
+      template.stop()
+   }
+
+   window.requestAnimationFrame
+   return {
+      set,
+      canvas,
+      remove,
+   }
 }

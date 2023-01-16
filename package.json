@@ -1,0 +1,16 @@
+{
+  "name": "canvas-party",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/YoavDn/canvas-animations.git",
+  "author": "yoav <yoavdan.m@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "@typescript-eslint/eslint-plugin": "^5.48.1",
+    "@typescript-eslint/parser": "^5.48.1",
+    "eslint": "^8.32.0",
+    "prettier": "^2.8.3",
+    "typescript": "^4.9.4"
+  }
+}
