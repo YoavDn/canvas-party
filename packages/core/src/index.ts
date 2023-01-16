@@ -22,28 +22,25 @@ export interface IOptionsType {
 export interface ICanvasSettings {
    type: TTemplates
    options?: IOptionsType
-
-   /**  
-     * Set the Canvas options and type of template
-     * @see  
-     * @param wrapper
-     * @param options
-    
-    */
 }
 
+/**
+ * Initializing the CanvasParty object and adding the prefered settings
+ * @see https://canvas-party.vercel.app/guide/getting-started.html
+ * @param wrapper
+ * @param canvasOptions
+ */
 export function useCanvasParty(wrapper: Element, canvasOptions: ICanvasSettings) {
    let { type, options } = canvasOptions
 
-   if (!document) return
-
    if (wrapper && !('getBoundingClientRect' in wrapper)) {
       console.error("Wrapper element is not valid, please make sure that the 'wrapper' is an 'Element' type")
-      return
    }
 
    let canvas = document.createElement('canvas')
    let c = type === 'fluid' ? canvas.getContext('webgl2', webglParams) : canvas.getContext('2d')
+
+   if (!c) console.warn('The canvas rendering context is not defined')
 
    canvas.style.width = '100%'
    canvas.style.height = '100%'
@@ -78,7 +75,7 @@ export function useCanvasParty(wrapper: Element, canvasOptions: ICanvasSettings)
 
          type = newType
          if (NewOptions) options = NewOptions
-         elRect = el.getBoundingClientRect()
+         elRect = wrapper.getBoundingClientRect()
          canvas.height = elRect.height
          canvas.width = elRect.width
          drawTemplate()
@@ -91,7 +88,6 @@ export function useCanvasParty(wrapper: Element, canvasOptions: ICanvasSettings)
       template.stop()
    }
 
-   window.requestAnimationFrame
    return {
       set,
       canvas,
